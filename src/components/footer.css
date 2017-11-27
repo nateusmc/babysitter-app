@@ -1,3 +1,8 @@
-/*li {
+.footerLi {
+  display: inline-block;
   list-style: none;
-}*/
+}
+
+.footerAnchor {
+  margin-right: 250px;
+}

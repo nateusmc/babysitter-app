@@ -1,7 +1,7 @@
-li {
+.navLi {
   display: inline-block;
   list-style: none;
 }
-a {
+.navAnchor {
   margin-right: 250px;
 }
