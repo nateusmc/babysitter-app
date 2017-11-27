@@ -18,9 +18,10 @@ class Home extends Component {
           <img src={image} alt="babysitter-image"/>
         </div>
         <div>
-          <form>
+          <form className="locationForm">
             <input type="text">
             </input>
+            <br/>
             <a href="#"><button>I'm a Parent</button></a>
             <a href="#"><button>I'm a Sitter</button></a>
           </form>
