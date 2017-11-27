@@ -1,13 +1,14 @@
 {
   "name": "babysitter-app",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts": "^1.0.17",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
+  "author": "Nate Garrett and Adam Bradbury",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
