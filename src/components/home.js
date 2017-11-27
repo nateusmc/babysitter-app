@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './home.css';
 import Nav from './navBar'
 import Footer from './footer'
+import ParentalInfo from './parentalInfo.js'
 
 class Home extends Component {
-
+  onSubmit(e) {
+    e.preventDefault();
+    console.log(e.target.customerType.value);
+  }
   render() {
 
     const image = 'http://cachevalleyfamilymagazine.com/wp-content/uploads/2015/04/babysitting.jpg'
@@ -18,13 +22,15 @@ class Home extends Component {
           <img src={image} alt="babysitter-image"/>
         </div>
         <div>
-          <form className="locationForm">
-            <input type="text">
-            </input>
-            <br/>
-            <a href="#"><button>I'm a Parent</button></a>
-            <a href="#"><button>I'm a Sitter</button></a>
+          <form className="locationForm" onSubmit={e => this.onSubmit(e)}>
+            <input value="parent" type="radio" name="customerType"/>I'm a Parent
+            <input value="sitter" type="radio" name="customerType"/>I'm a Sitter
+            in <input type="text"/>
+          <button type="submit">Search</button>
           </form>
+        </div>
+        <div>
+          <ParentalInfo />
         </div>
         <div>
           <h2>About Us:</h2>
