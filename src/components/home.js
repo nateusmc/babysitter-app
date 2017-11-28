@@ -19,12 +19,12 @@ class Home extends Component {
           <Nav />
         </div>
         <div className="image">
-          <img src={image} alt="babysitter-image"/>
+          <img src={image} alt="babysitter"/>
         </div>
         <div>
           <form className="locationForm" onSubmit={e => this.onSubmit(e)}>
-            <input value="parent" type="radio" name="customerType"/>I'm a Parent
-            <input value="sitter" type="radio" name="customerType"/>I'm a Sitter
+            <label htmlFor="parent">I'm a Parent </label><input value="parent" type="radio" id="parent" name="parent"/>
+            <label htmlFor="sitter">I'm a Sitter </label><input value="sitter" type="radio" id="sitter" name="sitter"/>
             in <input type="text"/>
           <button type="submit">Search</button>
           </form>
