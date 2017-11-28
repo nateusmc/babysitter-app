@@ -11,7 +11,7 @@ class Home extends Component {
   }
   render() {
 
-    const image = 'http://cachevalleyfamilymagazine.com/wp-content/uploads/2015/04/babysitting.jpg'
+    const image = 'http://placehold.it/200x200'
 
     return (
       <div className="main">
