@@ -4,5 +4,7 @@ const initalState = {
   ageOfChild: null,
   location: null,
   dateNeeded: null,
-  additionalInfo: null
+  additionalInfo: null,
+  // showParentalModal: false
+  // view: "parentalInfo"
 }
