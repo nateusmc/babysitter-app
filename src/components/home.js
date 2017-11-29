@@ -4,7 +4,8 @@ import './home.css';
 import Nav from './navBar'
 import Footer from './footer'
 import ParentalInfo from './parentalInfo.js'
-import { fetchParents } from '../actions';
+import { fetchParents, toggleForm} from '../actions';
+
 
 
 
@@ -13,15 +14,20 @@ class Home extends Component {
     e.preventDefault();
     console.log(this.input.value);
     const zip = this.input.value;
-    console.log(fetchParents)
     this.props.dispatch(fetchParents(zip));
     this.input.value= '';
   }
 
+  onChange(e) {
 
+    const value = e.target.value;
+    console.log(value);
+    this.props.dispatch(toggleForm())
+  }
 
+  
   render() {
-
+console.log(this.props.toggleForm)
     const image = 'http://placehold.it/200x200'
 
     return (
@@ -33,25 +39,48 @@ class Home extends Component {
           <img src={image} alt="babysitter"/>
         </div>
         <div>
-          <form className="zipCodeForm" onSubmit={e => this.onSubmit(e)}>
+          <form className="zipCodeForm" onChange={e => this.onChange(e)} onSubmit={e => this.onSubmit(e)}>
             <div>
-              <label htmlFor="parent">I'm a Parent </label>
-                <input value="parent" type="radio" id="parent" name="parent" />
+              <label htmlFor="radioParent">I'm a Parent </label>
+                <input value="radioParent" type="radio" id="radioParent" name="customerType"  />
             </div>
             <div>
-            <label htmlFor="sitter">I'm a Sitter </label>
-              <input value="sitter" type="radio" id="sitter" name="sitter"/>
+            <label htmlFor="radioSitter">I'm a Sitter </label>
+              <input value="radioSitter" type="radio" id="radioSitter" name="customerType" />
             </div>
             <div>
               in <input ref={input => this.input = input} type="text"/>
                   <button type="submit">Search</button>
             </div>
-            
+
+            {this.props.toggleForm && 
+
+          <fieldset>
+            <legend>Sign Up</legend>
+            <div>
+                <label htmlFor="firstName">First Name: </label><input ref={input => this.firstName = input} id="firstName" name="firstName" type="text" />
+              </div>
+              <div>
+                <label htmlFor="lastName">Last Name: </label><input ref={input => this.lastName = input} id="lastName" name="lastName" type="text" />
+              </div>
+              <div>
+                <label htmlFor="ageOfChild">Age of Child: </label><input ref={input => this.ageOfChild = input} id="ageOfChild" name="ageOfChild" type="text" />
+              </div>
+              <div>
+                <label htmlFor="zipcode">Zipcode: </label><input ref={input => this.zipcode = input} id="zipcode" name="zipcode" type="text" />
+              </div>
+              <div>
+                <label htmlFor="dateNeeded">Date Needed: </label><input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="text" />
+              </div>
+              <div>
+                <label htmlFor="additionalInfo">Additional Info: </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text" />
+              </div>
+          </fieldset>
+          } 
           </form>
+          {/* {this.props.parents !== [] && <sitterPage parents={this.props.parents}/>} */}
         </div>
-        <div>
-          <ParentalInfo />
-        </div>
+      
         <div>
           <h2>About Us:</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
@@ -68,9 +97,13 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = ({parentsForm: state}, props) => {
+  console.log(state)
+  return {
   radioParent: state.radioParent,
   radioSitter: state.radioSitter,
-})
+  parents: state.parents,
+  toggleForm: state.toggleForm,
+}}
 
 export default connect(mapStateToProps)(Home);
