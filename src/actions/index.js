@@ -61,6 +61,11 @@ export const addParentInfo = (parent) => dispatch => {
   .catch(err => dispatch(fetchParentError(err)))
 }
 
+// export const GET_PARENTS_BY_ZIP = 'GET_PARENTS_BY_ZIP';
+// export const getParentsByZip = (zip) => dispatch => {
+
+// }
+
 // const addParentsInfo = (firstName, lastName, ageOfChild, zipcode, dateNeeded, additionalInfo) => ({
 //   type: 'ADD_PARENTS_INFO',
 //   firstName,

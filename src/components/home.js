@@ -3,18 +3,25 @@ import './home.css';
 import Nav from './navBar'
 import Footer from './footer'
 import ParentalInfo from './parentalInfo.js'
+// import { fetchParent } from '../actions';
+
+
 
 class Home extends Component {
   onSubmit(e) {
     e.preventDefault();
-    console.log(e.target.customerType.value);
+    console.log(this.input.value);
+    const zip = this.input.value;
+    console.log(zip)
+    // this.props.dispatch(fetchParent(zip));
+    this.input.value= '';
   }
   render() {
 
     const image = 'http://placehold.it/200x200'
 
     return (
-      <div className="main">
+      <div className="main">loading: false,
         <div>
           <Nav />
         </div>
@@ -23,10 +30,19 @@ class Home extends Component {
         </div>
         <div>
           <form className="locationForm" onSubmit={e => this.onSubmit(e)}>
-            <label htmlFor="parent">I'm a Parent </label><input value="parent" type="radio" id="parent" name="parent"/>
-            <label htmlFor="sitter">I'm a Sitter </label><input value="sitter" type="radio" id="sitter" name="sitter"/>
-            in <input type="text"/>
-          <button type="submit">Search</button>
+            <div>
+              <label htmlFor="parent">I'm a Parent </label>
+                <input value="parent" type="radio" id="parent" name="parent" />
+            </div>
+            <div>
+            <label htmlFor="sitter">I'm a Sitter </label>
+              <input value="sitter" type="radio" id="sitter" name="sitter"/>
+            </div>
+            <div>
+              in <input ref={input => this.input = input} type="text"/>
+                  <button type="submit">Search</button>
+            </div>
+            
           </form>
         </div>
         <div>
