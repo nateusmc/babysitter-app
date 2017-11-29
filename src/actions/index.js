@@ -38,10 +38,10 @@ export const fetchParent = () => dispatch => {
       type: ADD_PARENT_SUCCESS,
       parent
   })
-  
+
 
 export const ADD_PARENT_INFO = 'ADD_PARENT_INFO';
-export const addParentInfo = (parent) = dispatch => {
+export const addParentInfo = (parent) => dispatch => {
   dispatch(fetchParentRequest());
   return fetch(`${API_BASE_URL}/api/parents`, {
     method: 'POST',
