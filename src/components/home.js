@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './home.css';
 import Nav from './navBar'
 import Footer from './footer'
 import ParentalInfo from './parentalInfo.js'
-// import { fetchParent } from '../actions';
+import { fetchParents } from '../actions';
 
 
 
@@ -12,16 +13,19 @@ class Home extends Component {
     e.preventDefault();
     console.log(this.input.value);
     const zip = this.input.value;
-    console.log(zip)
-    // this.props.dispatch(fetchParent(zip));
+    console.log(fetchParents)
+    this.props.dispatch(fetchParents(zip));
     this.input.value= '';
   }
+
+
+
   render() {
 
     const image = 'http://placehold.it/200x200'
 
     return (
-      <div className="main">loading: false,
+      <div className="main">
         <div>
           <Nav />
         </div>
@@ -29,7 +33,7 @@ class Home extends Component {
           <img src={image} alt="babysitter"/>
         </div>
         <div>
-          <form className="locationForm" onSubmit={e => this.onSubmit(e)}>
+          <form className="zipCodeForm" onSubmit={e => this.onSubmit(e)}>
             <div>
               <label htmlFor="parent">I'm a Parent </label>
                 <input value="parent" type="radio" id="parent" name="parent" />
@@ -64,4 +68,9 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = (state, props) => ({
+  radioParent: state.radioParent,
+  radioSitter: state.radioSitter,
+})
+
+export default connect(mapStateToProps)(Home);
