@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addParentInfo } from '../actions'
+import { addParentsInfo } from '../actions'
 
 class ParentalInfo extends Component {
 
@@ -13,7 +13,7 @@ class ParentalInfo extends Component {
       dateNeeded: this.dateNeeded.value,
       additionalInfo: this.additionalInfo.value,
     }
-    this.props.dispatch(addParentInfo(parent))
+    this.props.dispatch(addParentsInfo(parent))
     this.input.value= '';
   }
 
