@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './home.css';
-import Nav from './navBar'
-import Footer from './footer'
-import ParentalInfo from './parentalInfo.js'
-// import { fetchParent } from '../actions';
-
-
+import Nav from './navBar';
+import Footer from './footer';
+import { fetchParents } from '../actions';
+import ParentalInfo from './parentalInfo';
+import Sitter from './sitterPage';
 
 class Home extends Component {
   onSubmit(e) {
     e.preventDefault();
-    console.log(this.input.value);
     const zip = this.input.value;
-    console.log(zip)
-    // this.props.dispatch(fetchParent(zip));
+    this.props.dispatch(fetchParents(zip));
     this.input.value= '';
   }
-  render() {
 
+  render() {
     const image = 'http://placehold.it/200x200'
 
     return (
-      <div className="main">loading: false,
+      <div className="main">
         <div>
           <Nav />
         </div>
@@ -29,25 +27,20 @@ class Home extends Component {
           <img src={image} alt="babysitter"/>
         </div>
         <div>
-          <form className="locationForm" onSubmit={e => this.onSubmit(e)}>
+          <form className="zipCodeForm" onSubmit={e => this.onSubmit(e)}>
             <div>
-              <label htmlFor="parent">I'm a Parent </label>
-                <input value="parent" type="radio" id="parent" name="parent" />
+              I'm a babysitter looking for families in: <input ref={input => this.input = input} type="text" placeholder="Enter Zip Code"/>
+            <button type="submit">Search</button>
+            <br/>
+              OR
+              <br/>
             </div>
-            <div>
-            <label htmlFor="sitter">I'm a Sitter </label>
-              <input value="sitter" type="radio" id="sitter" name="sitter"/>
-            </div>
-            <div>
-              in <input ref={input => this.input = input} type="text"/>
-                  <button type="submit">Search</button>
-            </div>
-            
-          </form>
+            </form>
+            <ParentalInfo />
+            <Sitter />
+          {/* {this.props.parents !== [] && <sitterPage parents={this.props.parents}/>} */}
         </div>
-        <div>
-          <ParentalInfo />
-        </div>
+
         <div>
           <h2>About Us:</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
@@ -64,4 +57,10 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = ({parentsForm: state}, props) => {
+  return {
+  parents: state.parents,
+  visible: state.visible,
+}}
+
+export default connect(mapStateToProps)(Home);

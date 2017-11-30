@@ -1,52 +1,67 @@
 import {API_BASE_URL} from '../config';
 
-export const fetchParent = () => dispatch => {
-  
-      dispatch(fetchParentRequest());
-  
-      fetch(`${API_BASE_URL}/api/parents`).then(res => {
-          if (!res.ok) {
-              return Promise.reject(res.statusText);
-          }
-              return res.json();
-          }).then(parent => {
-              console.log(parent);
-              return dispatch(fetchParentRequest(parent));
-          }).catch(err => 
-              dispatch(fetchParentError(err))
-      )
+export const fetchParents = (zipcode) => dispatch => {
+      dispatch(fetchParentsRequest())
+
+    return fetch(`${API_BASE_URL}/zipcode`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({zipcode})
+    })
+        .then(res => {
+            if(!res.ok) {
+                return Promise.reject(res.statusText)
+            }
+                return res.json();
+          }).then(
+              parents => {
+                  console.log(parents)
+                dispatch(fetchParentsSuccess(parents))
+              }
+            )
+              .catch(err => {
+                console.log(err)
+              dispatch(fetchParentsError(err))
+              }
+            )
   }
 
-  export const FETCH_PARENT_SUCCESS = 'FETCH_PARENT_SUCCESS';
-  export const fetchParentSuccess = parent => ({
-      type: FETCH_PARENT_SUCCESS,
-      parent
+  export const FETCH_PARENTS_SUCCESS = 'FETCH_PARENTS_SUCCESS';
+  export const fetchParentsSuccess = parents => ({
+      type: FETCH_PARENTS_SUCCESS,
+      parents
   })
 
-  export const FETCH_PARENT_REQUEST = 'FETCH_PARENT_REQUEST';
-  export const fetchParentRequest = () => ({
-      type: FETCH_PARENT_REQUEST,
+  export const FETCH_PARENTS_REQUEST = 'FETCH_PARENTS_REQUEST';
+  export const fetchParentsRequest = () => ({
+      type: FETCH_PARENTS_REQUEST,
+
   })
-  
-  export const FETCH_PARENT_ERROR = 'FETCH_PARENT_ERROR';
-  export const fetchParentError = error => ({
-      type: FETCH_PARENT_ERROR,
+
+  export const FETCH_PARENTS_ERROR = 'FETCH_PARENTS_ERROR';
+  export const fetchParentsError = error => ({
+      type: FETCH_PARENTS_ERROR,
   })
-  
-  export const ADD_PARENT_SUCCESS = 'ADD_PARENT_SUCCESS';
-  export const addParentSuccess = parent => ({
-      type: ADD_PARENT_SUCCESS,
-      parent
+
+  export const ADD_PARENTS_SUCCESS = 'ADD_PARENTS_SUCCESS';
+  export const addParentsSuccess = parents => ({
+      type: ADD_PARENTS_SUCCESS,
+      parents
   })
 
 
-export const ADD_PARENT_INFO = 'ADD_PARENT_INFO';
-export const addParentInfo = (parent) => dispatch => {
-  dispatch(fetchParentRequest());
-  return fetch(`${API_BASE_URL}/api/parents`, {
+  export const TOGGLE_FORM = 'TOGGLE_FORM';
+  export const toggleForm = () => ({
+      type: TOGGLE_FORM,
+  })
+
+export const ADD_PARENTS_INFO = 'ADD_PARENTS_INFO';
+export const addParentsInfo = (parents) => dispatch => {
+  dispatch(fetchParentsRequest());
+  return fetch(`${API_BASE_URL}`, {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(parent)
+    body: JSON.stringify(parents)
   })
   .then(res => {
     if(!res.ok) {
@@ -54,12 +69,13 @@ export const addParentInfo = (parent) => dispatch => {
     }
       return res.json();
   }).then(
-      parent => {
-        dispatch(addParentSuccess(parent))
+      parents => {
+        dispatch(addParentsSuccess(parents))
       }
   )
-  .catch(err => dispatch(fetchParentError(err)))
+  .catch(err => dispatch(fetchParentsError(err)))
 }
+
 
 // export const GET_PARENTS_BY_ZIP = 'GET_PARENTS_BY_ZIP';
 // export const getParentsByZip = (zip) => dispatch => {
@@ -82,4 +98,3 @@ export const addParentInfo = (parent) => dispatch => {
 
 
 // export default addParentsInfo;
-
