@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import './home.css';
 import Nav from './navBar'
 import Footer from './footer'
-import ParentalInfo from './parentalInfo.js'
+// import ParentalInfo from './parentalInfo.js'
 import { fetchParents, toggleForm} from '../actions';
-
-
-
 
 class Home extends Component {
   onSubmit(e) {
@@ -19,9 +16,8 @@ class Home extends Component {
   }
 
   onChange(e) {
-
     const value = e.target.value;
-    console.log(value);
+    console.log('++++', value);
     this.props.dispatch(toggleForm())
   }
 
@@ -39,44 +35,43 @@ console.log(this.props.toggleForm)
           <img src={image} alt="babysitter"/>
         </div>
         <div>
-          <form className="zipCodeForm" onChange={e => this.onChange(e)} onSubmit={e => this.onSubmit(e)}>
+          <form className="zipCodeForm" onSubmit={e => this.onSubmit(e)}>
             <div>
               <label htmlFor="radioParent">I'm a Parent </label>
-                <input value="radioParent" type="radio" id="radioParent" name="customerType"  />
+                <input value="radioParent" type="radio" id="radioParent" name="customerType" onChange={e => this.onChange(e)} />
             </div>
             <div>
             <label htmlFor="radioSitter">I'm a Sitter </label>
-              <input value="radioSitter" type="radio" id="radioSitter" name="customerType" />
+              <input value="radioSitter" type="radio" id="radioSitter" name="customerType" onChange={e => this.onChange(e)} />
             </div>
             <div>
               in <input ref={input => this.input = input} type="text"/>
                   <button type="submit">Search</button>
             </div>
 
-            {this.props.toggleForm && 
-
-          <fieldset>
-            <legend>Sign Up</legend>
-            <div>
-                <label htmlFor="firstName">First Name: </label><input ref={input => this.firstName = input} id="firstName" name="firstName" type="text" />
-              </div>
-              <div>
-                <label htmlFor="lastName">Last Name: </label><input ref={input => this.lastName = input} id="lastName" name="lastName" type="text" />
-              </div>
-              <div>
-                <label htmlFor="ageOfChild">Age of Child: </label><input ref={input => this.ageOfChild = input} id="ageOfChild" name="ageOfChild" type="text" />
-              </div>
-              <div>
-                <label htmlFor="zipcode">Zipcode: </label><input ref={input => this.zipcode = input} id="zipcode" name="zipcode" type="text" />
-              </div>
-              <div>
-                <label htmlFor="dateNeeded">Date Needed: </label><input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="text" />
-              </div>
-              <div>
-                <label htmlFor="additionalInfo">Additional Info: </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text" />
-              </div>
-          </fieldset>
-          } 
+            {this.props.visible && 
+              <fieldset>
+                <legend>Sign Up</legend>
+                <div>
+                    <label htmlFor="firstName">First Name: </label><input ref={input => this.firstName = input} id="firstName" name="firstName" type="text" />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName">Last Name: </label><input ref={input => this.lastName = input} id="lastName" name="lastName" type="text" />
+                  </div>
+                  <div>
+                    <label htmlFor="ageOfChild">Age of Child: </label><input ref={input => this.ageOfChild = input} id="ageOfChild" name="ageOfChild" type="text" />
+                  </div>
+                  <div>
+                    <label htmlFor="zipcode">Zipcode: </label><input ref={input => this.zipcode = input} id="zipcode" name="zipcode" type="text" />
+                  </div>
+                  <div>
+                    <label htmlFor="dateNeeded">Date Needed: </label><input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="text" />
+                  </div>
+                  <div>
+                    <label htmlFor="additionalInfo">Additional Info: </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text" />
+                  </div>
+              </fieldset>
+            } 
           </form>
           {/* {this.props.parents !== [] && <sitterPage parents={this.props.parents}/>} */}
         </div>
@@ -100,10 +95,8 @@ console.log(this.props.toggleForm)
 const mapStateToProps = ({parentsForm: state}, props) => {
   console.log(state)
   return {
-  radioParent: state.radioParent,
-  radioSitter: state.radioSitter,
   parents: state.parents,
-  toggleForm: state.toggleForm,
+  visible: state.visible,
 }}
 
 export default connect(mapStateToProps)(Home);

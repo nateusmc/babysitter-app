@@ -1,4 +1,4 @@
-import {TOGGLE_FORM, ADD_PARENTS_SUCCESS, FETCH_PARENTS_ERROR, FETCH_PARENTS_REQUEST, FETCH_PARENTS_SUCCESS, ADD_PARENTS_INFO, toggleForm } from '../actions'
+import {TOGGLE_FORM, ADD_PARENTS_SUCCESS, FETCH_PARENTS_ERROR, FETCH_PARENTS_REQUEST, FETCH_PARENTS_SUCCESS, ADD_PARENTS_INFO } from '../actions'
 
 const initialState = {
   parents: [],
@@ -10,9 +10,7 @@ const initialState = {
   additionalInfo: null,
   loading: false,
   error: null,
-  radioParent: false,
-  radioSitter: false,
-  toggleForm: true,
+  visible: false,
 }
 
 export default (state = initialState, action) => {
@@ -23,9 +21,8 @@ export default (state = initialState, action) => {
   }
 
   if(action.type === TOGGLE_FORM) {
-    console.log('test')
     return Object.assign({}, state, {
-      toggleForm: false
+      visible: true
     })
   }
 
