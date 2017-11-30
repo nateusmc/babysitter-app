@@ -17,7 +17,6 @@ class Home extends Component {
 
   render() {
     const image = 'http://placehold.it/200x200'
-
     return (
       <div className="main">
         <div>
