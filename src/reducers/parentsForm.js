@@ -15,6 +15,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   if (action.type === FETCH_PARENTS_SUCCESS) {
+    console.log('adam is cool');
     return Object.assign({}, state, {
       parents: action.parents
     })
@@ -39,7 +40,7 @@ export default (state = initialState, action) => {
   }
 
   if(action.type === ADD_PARENTS_SUCCESS) {
-    return Object.assign({}, state, {   
+    return Object.assign({}, state, {
       firstName: action.firstName,
       lastName: action.lastName,
       ageOfChild: action.ageOfChild,
@@ -61,7 +62,7 @@ export default (state = initialState, action) => {
       error: action.error,
     })
   }
-  
+
     return state
 }
 
