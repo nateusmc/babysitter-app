@@ -18,7 +18,7 @@ export const fetchParents = (zipcode) => dispatch => {
                   console.log(parents)
                 dispatch(fetchParentsSuccess(parents))
               }
-            ) 
+            )
               .catch(err => {
                 console.log(err)
               dispatch(fetchParentsError(err))
@@ -37,12 +37,12 @@ export const fetchParents = (zipcode) => dispatch => {
       type: FETCH_PARENTS_REQUEST,
 
   })
-  
+
   export const FETCH_PARENTS_ERROR = 'FETCH_PARENTS_ERROR';
   export const fetchParentsError = error => ({
       type: FETCH_PARENTS_ERROR,
   })
-  
+
   export const ADD_PARENTS_SUCCESS = 'ADD_PARENTS_SUCCESS';
   export const addParentsSuccess = parents => ({
       type: ADD_PARENTS_SUCCESS,
@@ -58,7 +58,7 @@ export const fetchParents = (zipcode) => dispatch => {
 export const ADD_PARENTS_INFO = 'ADD_PARENTS_INFO';
 export const addParentsInfo = (parents) => dispatch => {
   dispatch(fetchParentsRequest());
-  return fetch(`${API_BASE_URL}/api/parents`, {
+  return fetch(`${API_BASE_URL}`, {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify(parents)
@@ -98,4 +98,3 @@ export const addParentsInfo = (parents) => dispatch => {
 
 
 // export default addParentsInfo;
-

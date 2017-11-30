@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './home.css';
 import Nav from './navBar'
 import Footer from './footer'
-// import ParentalInfo from './parentalInfo.js'
+import { addParentsInfo } from '../actions/index'
 import { fetchParents, toggleForm} from '../actions';
 
 class Home extends Component {
@@ -15,15 +15,30 @@ class Home extends Component {
     this.input.value= '';
   }
 
-  onChange(e) {
-    const value = e.target.value;
-    console.log('++++', value);
+  onTap(e) {
     this.props.dispatch(toggleForm())
   }
 
-  
+  onClick(e) {
+    e.preventDefault();
+    const parent = {
+      firstName: this.firstName.value,
+      lastName: this.lastName.value,
+      ageOfChild: this.ageOfChild.value,
+      zipcode: this.zipcode.value,
+      dateNeeded: this.dateNeeded.value,
+      additionalInfo: this.additionalInfo.value,
+    }
+    this.props.dispatch(addParentsInfo(parent))
+    this.firstName.value= '';
+    this.lastName.value= '';
+    this.ageOfChild.value= '';
+    this.zipcode.value= '';
+    this.dateNeeded.value= '';
+    this.additionalInfo.value= '';
+  }
+
   render() {
-console.log(this.props.toggleForm)
     const image = 'http://placehold.it/200x200'
 
     return (
@@ -37,20 +52,19 @@ console.log(this.props.toggleForm)
         <div>
           <form className="zipCodeForm" onSubmit={e => this.onSubmit(e)}>
             <div>
-              <label htmlFor="radioParent">I'm a Parent </label>
-                <input value="radioParent" type="radio" id="radioParent" name="customerType" onChange={e => this.onChange(e)} />
+              I'm a babysitter looking for families in: <input ref={input => this.input = input} type="text" placeholder="Enter Zip Code"/>
+            <button type="submit">Search</button>
+            <br/>
+              OR
+              <br/>
+              <div>
+            <button type="button" onClick={e => this.onTap(e)}>I'm a Parent Searching for a Sitter</button>
             </div>
-            <div>
-            <label htmlFor="radioSitter">I'm a Sitter </label>
-              <input value="radioSitter" type="radio" id="radioSitter" name="customerType" onChange={e => this.onChange(e)} />
             </div>
-            <div>
-              in <input ref={input => this.input = input} type="text"/>
-                  <button type="submit">Search</button>
-            </div>
-
-            {this.props.visible && 
+            </form>
+            {this.props.visible &&
               <fieldset>
+                <form>
                 <legend>Sign Up</legend>
                 <div>
                     <label htmlFor="firstName">First Name: </label><input ref={input => this.firstName = input} id="firstName" name="firstName" type="text" />
@@ -70,12 +84,14 @@ console.log(this.props.toggleForm)
                   <div>
                     <label htmlFor="additionalInfo">Additional Info: </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text" />
                   </div>
+                  <button type="submit" onClick={e => this.onClick(e)}>Post Job</button>
+                  </form>
               </fieldset>
-            } 
-          </form>
+            }
+
           {/* {this.props.parents !== [] && <sitterPage parents={this.props.parents}/>} */}
         </div>
-      
+
         <div>
           <h2>About Us:</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
@@ -93,7 +109,6 @@ console.log(this.props.toggleForm)
 }
 
 const mapStateToProps = ({parentsForm: state}, props) => {
-  console.log(state)
   return {
   parents: state.parents,
   visible: state.visible,
