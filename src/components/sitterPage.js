@@ -9,13 +9,12 @@ import { connect } from 'react-redux';
 
     const parents = this.props.parents.map((parents, index) => {
       return <li key={index}> 
-                <div>{parents.name}</div>
-                <div>{parents.ageOfChild}</div>
-                <div>{parents.zipcode}</div>
-                <div>{parents.dateNeeded}</div>
-                <div>{parents.additionalInfo}</div>
+                <div>Parent's Name: {parents.name}</div>
+                <div>Child's Age: {parents.ageOfChild}</div>
+                <div>Location: {parents.zipcode}</div>
+                <div>Date Needed: {parents.dateNeeded}</div>
+                <div>Additional Information: {parents.additionalInfo}</div>
              </li>
-    
   })
     return (
     
