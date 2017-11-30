@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import {addParentsInfo} from '../actions'
-import { toggleForm } from '../actions';
 
 class ParentalInfo extends Component {
 
@@ -23,8 +22,6 @@ class ParentalInfo extends Component {
     this.dateNeeded.value = '';
     this.additionalInfo.value = '';
   }
-
-
 
   render() {
     return (
@@ -59,9 +56,7 @@ class ParentalInfo extends Component {
             <button type="submit" onClick={e => this.onClick(e)}>Post Job</button>
           </form>
         </fieldset>
-
-
-  </div>
+      </div>
   )
   }
 }

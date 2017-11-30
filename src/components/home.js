@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './home.css';
 import Nav from './navBar';
 import Footer from './footer';
 import { fetchParents } from '../actions';
 import Sitter from './sitterPage';
-import ParentalInfo from './parentalInfo'
-
 
 class Home extends Component {
   onSubmit(e) {
