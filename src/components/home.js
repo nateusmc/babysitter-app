@@ -79,7 +79,7 @@ class Home extends Component {
                     <label htmlFor="zipcode">Zipcode: </label><input ref={input => this.zipcode = input} id="zipcode" name="zipcode" type="text" />
                   </div>
                   <div>
-                    <label htmlFor="dateNeeded">Date Needed: </label><input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="text" />
+                    <label htmlFor="dateNeeded">Date Needed: </label><input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="date" />
                   </div>
                   <div>
                     <label htmlFor="additionalInfo">Additional Info: </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text" />

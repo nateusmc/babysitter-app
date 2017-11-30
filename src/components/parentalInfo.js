@@ -20,7 +20,7 @@ class ParentalInfo extends Component {
 render() {
   return (
     <form className="parentalInfoForm" onSubmit={e => this.onSubmit(e)}>
-      {this.props.visible && 
+      {this.props.visible &&
               <fieldset>
                 <legend>Sign Up</legend>
                 <div>
@@ -36,13 +36,13 @@ render() {
                     <label htmlFor="zipcode">Zipcode: </label><input ref={input => this.zipcode = input} id="zipcode" name="zipcode" type="text" />
                   </div>
                   <div>
-                    <label htmlFor="dateNeeded">Date Needed: </label><input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="text" />
+                    <label htmlFor="dateNeeded">Date Needed: </label><input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="date" />
                   </div>
                   <div>
                     <label htmlFor="additionalInfo">Additional Info: </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text" />
                   </div>
               </fieldset>
-            } 
+            }
     </form>
   )
 }
