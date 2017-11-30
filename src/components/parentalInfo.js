@@ -24,18 +24,11 @@ class ParentalInfo extends Component {
     this.additionalInfo.value = '';
   }
 
-  onTap(e) {
-    this.props.dispatch(toggleForm())
-  }
+
 
   render() {
     return (
       <div>
-      <div>
-        <button type="button" onClick={e => this.onTap(e)}>I'm a Parent Searching for a Sitter</button>
-      </div>
-
-      {this.props.visible &&
         <fieldset>
           <form>
             <legend>Sign Up</legend>
@@ -67,7 +60,7 @@ class ParentalInfo extends Component {
           </form>
         </fieldset>
 
-    }
+
   </div>
   )
   }

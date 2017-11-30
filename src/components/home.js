@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route, Link } from 'react-router-dom';
 import './home.css';
 import Nav from './navBar';
 import Footer from './footer';
 import { fetchParents } from '../actions';
-import ParentalInfo from './parentalInfo';
 import Sitter from './sitterPage';
+import ParentalInfo from './parentalInfo'
+
 
 class Home extends Component {
   onSubmit(e) {
@@ -35,9 +37,12 @@ class Home extends Component {
               <br/>
             </div>
             </form>
-            <ParentalInfo />
+            <div>
+              <Link to="/parents">
+                <button type="button">I'm a Parent Searching for a Sitter</button>
+              </Link>
+            </div>
             <Sitter />
-          {/* {this.props.parents !== [] && <sitterPage parents={this.props.parents}/>} */}
         </div>
 
         <div>
