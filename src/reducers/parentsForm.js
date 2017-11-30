@@ -1,4 +1,4 @@
-import { ADD_PARENTS_SUCCESS, FETCH_PARENTS_ERROR, FETCH_PARENTS_REQUEST, FETCH_PARENTS_SUCCESS, ADD_PARENTS_INFO } from '../actions'
+import {TOGGLE_FORM, ADD_PARENTS_SUCCESS, FETCH_PARENTS_ERROR, FETCH_PARENTS_REQUEST, FETCH_PARENTS_SUCCESS, ADD_PARENTS_INFO } from '../actions'
 
 const initialState = {
   parents: [],
@@ -10,14 +10,19 @@ const initialState = {
   additionalInfo: null,
   loading: false,
   error: null,
-  radioParent: false,
-  radioSitter: false,
+  visible: false,
 }
 
 export default (state = initialState, action) => {
   if (action.type === FETCH_PARENTS_SUCCESS) {
     return Object.assign({}, state, {
-      parents: action.parentsparent
+      parents: action.parents
+    })
+  }
+
+  if(action.type === TOGGLE_FORM) {
+    return Object.assign({}, state, {
+      visible: true
     })
   }
 
@@ -56,6 +61,7 @@ export default (state = initialState, action) => {
       error: action.error,
     })
   }
+  
     return state
 }
 
