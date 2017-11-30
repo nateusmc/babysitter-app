@@ -2,26 +2,30 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-class Sitter extends Component {
+ class Sitter extends Component {
 
-render() {
-    // let parentsArray = [];
-    // let parentsArrayFinished = this.props.parents;
-    // parentsArrayFinished.push(parentsArray)
-    // parentsArray.push(parentsArray);
-  return (
-  //
-  //   <div>
-  //   <ul>
-  //     {this.props.parents.map((parents, index) => (
-  //           <li key={index}>
-  //             {parents}
-  //           </li>
-  //       ))}
-  //   </ul>
-  // </div>
-  // )
-}
+  
+  render() { 
+
+    const parents = this.props.parents.map((parents, index) => {
+      return <li key={index}> 
+                <div>{parents.name}</div>
+                <div>{parents.ageOfChild}</div>
+                <div>{parents.zipcode}</div>
+                <div>{parents.dateNeeded}</div>
+                <div>{parents.additionalInfo}</div>
+             </li>
+    
+  })
+    return (
+    
+      <div>
+      <ul id="parentsList">
+            {parents}
+      </ul>
+    </div>
+    )
+  }
 }
 
 const mapStateToProps = ({parentsForm: state}, props) => {
