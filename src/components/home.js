@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './home.css';
-import Nav from './navBar'
-import Footer from './footer'
+import Nav from './navBar';
+import Footer from './footer';
 import { fetchParents } from '../actions';
-import ParentalInfo from './parentalInfo'
+import ParentalInfo from './parentalInfo';
+import Sitter from './sitterPage';
 
 class Home extends Component {
   onSubmit(e) {
@@ -14,29 +15,6 @@ class Home extends Component {
     this.props.dispatch(fetchParents(zip));
     this.input.value= '';
   }
-
-  // onTap(e) {
-  //   this.props.dispatch(toggleForm())
-  // }
-
-  // onClick(e) {
-  //   e.preventDefault();
-  //   const parent = {
-  //     firstName: this.firstName.value,
-  //     lastName: this.lastName.value,
-  //     ageOfChild: this.ageOfChild.value,
-  //     zipcode: this.zipcode.value,
-  //     dateNeeded: this.dateNeeded.value,
-  //     additionalInfo: this.additionalInfo.value,
-  //   }
-  //   this.props.dispatch(addParentsInfo(parent))
-  //   this.firstName.value= '';
-  //   this.lastName.value= '';
-  //   this.ageOfChild.value= '';
-  //   this.zipcode.value= '';
-  //   this.dateNeeded.value= '';
-  //   this.additionalInfo.value= '';
-  // }
 
   render() {
     const image = 'http://placehold.it/200x200'
@@ -60,7 +38,7 @@ class Home extends Component {
             </div>
             </form>
             <ParentalInfo />
-
+            <Sitter />
           {/* {this.props.parents !== [] && <sitterPage parents={this.props.parents}/>} */}
         </div>
 

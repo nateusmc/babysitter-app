@@ -15,7 +15,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
   if (action.type === FETCH_PARENTS_SUCCESS) {
-    console.log('adam is cool');
     return Object.assign({}, state, {
       parents: action.parents
     })
