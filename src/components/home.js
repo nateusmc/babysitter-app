@@ -10,7 +10,6 @@ import Sitter from './sitterPage';
 class Home extends Component {
   onSubmit(e) {
     e.preventDefault();
-    console.log(this.input.value);
     const zip = this.input.value;
     this.props.dispatch(fetchParents(zip));
     this.input.value= '';
