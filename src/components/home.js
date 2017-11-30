@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './home.css';
 import Nav from './navBar';
 import Footer from './footer';
 import { fetchParents } from '../actions';
-import ParentalInfo from './parentalInfo';
 import Sitter from './sitterPage';
 
 class Home extends Component {
@@ -17,7 +17,6 @@ class Home extends Component {
 
   render() {
     const image = 'http://placehold.it/200x200'
-
     return (
       <div className="main">
         <div>
@@ -36,9 +35,12 @@ class Home extends Component {
               <br/>
             </div>
             </form>
-            <ParentalInfo />
+            <div>
+              <Link to="/parents">
+                <button type="button">I'm a Parent Searching for a Sitter</button>
+              </Link>
+            </div>
             <Sitter />
-          {/* {this.props.parents !== [] && <sitterPage parents={this.props.parents}/>} */}
         </div>
 
         <div>
