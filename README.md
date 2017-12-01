@@ -1,10 +1,25 @@
-# Baby Sitter App (Title TBD)
+# Baby Sitter App
 
 Baby Sitter App's mission is to make child care more affordable and accessable to parents. The technology we're building simplifies the process of finding a baby sitter for a special occasion or if needed on a regular schedule. The technology will also allow parents to search for certified sitters based on location.
 
 #
 #
 
+Features:
+
+-Parents can fill out a form to request a babysitter for a specific date.
+-Sitters can search for potential jobs based on zip code.
+-Sitters can contact parents using email attached to babysitting job posting.
+-Parents job postings include contact email, zip code, date needed babysitter for, as well as a section for any additional information such as allergies.
+
+
+#
+#
+
+Wireframe and Functional Specifications can be found in the resources folder
+
+#
+#
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
