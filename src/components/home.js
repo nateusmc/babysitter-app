@@ -16,7 +16,7 @@ class Home extends Component {
   }
 
   render() {
-    const image = 'http://placehold.it/200x200'
+    const image = 'https://placehold.it/200x200'
     return (
       <div className="main">
         <div>
@@ -44,9 +44,9 @@ class Home extends Component {
 
         <div>
           <h2>About Us:</h2>
-          <p>Baby Sitter App's mission is to make child care more affordable and accessable to parents. 
-            The technology we're building simplifies the process of finding a baby sitter for a special 
-            occasion or if needed on a regular schedule. The technology will also allow parents to search 
+          <p>Baby Sitter App's mission is to make child care more affordable and accessable to parents.
+            The technology we're building simplifies the process of finding a baby sitter for a special
+            occasion or if needed on a regular schedule. The technology will also allow parents to search
             for certified sitters based on location.</p>
         </div>
         <div>

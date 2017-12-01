@@ -3,7 +3,7 @@ import {API_BASE_URL} from '../config';
 export const fetchParents = (zipcode) => dispatch => {
       dispatch(fetchParentsRequest())
 
-    return fetch(`${API_BASE_URL}/zipcode`, {
+    return fetch(`${API_BASE_URL}/parents/zipcode`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({zipcode})
@@ -58,7 +58,7 @@ export const fetchParents = (zipcode) => dispatch => {
 export const ADD_PARENTS_INFO = 'ADD_PARENTS_INFO';
 export const addParentsInfo = (parents) => dispatch => {
   dispatch(fetchParentsRequest());
-  return fetch(`${API_BASE_URL}`, {
+  return fetch(`${API_BASE_URL}/parents`, {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify(parents)
@@ -74,8 +74,8 @@ export const addParentsInfo = (parents) => dispatch => {
         dispatch(addParentsSuccess(parents))
       }
   )
-  
-  .catch(err => 
+
+  .catch(err =>
     dispatch(fetchParentsError(err)))
 }
 
