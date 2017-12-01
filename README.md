@@ -5,18 +5,36 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 #
 #
 
-Features:
+#Features:
 
 -Parents can fill out a form to request a babysitter for a specific date.
+#
+
 -Sitters can search for potential jobs based on zip code.
+#
+
 -Sitters can contact parents using email attached to babysitting job posting.
--Parents job postings include contact email, zip code, date needed babysitter for, as well as a section for any additional information such as allergies.
+#
 
+-Parents job postings include contact email, contact name, zip code, age of child, date babysitter is needed for, start time, end time, as well as a section for any additional information such as allergies, animals in the home, etc.
+#
 
 #
 #
 
-Wireframe and Functional Specifications can be found in the resources folder
+#Wireframe and Functional Specifications
+Located in the resources folder
+
+#
+#
+
+#Live Link to Deployed Site
+https://sitter-finder.netlify.com/
+
+#
+#
+
+<img src="photos/SitterFinder.png"/>
 
 #
 #
