@@ -52,7 +52,7 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 #
 
 
-# Screenshots of Live Site
+# Screenshots of Live Site:
 
 # Homepage
 
