@@ -14,7 +14,9 @@ class Home extends Component {
   }
 
   render() {
+
     const image = 'https://www.sitterstars.com/images/banner.jpg'
+
     return (
       <div className="main">
         <div className="navBar">
