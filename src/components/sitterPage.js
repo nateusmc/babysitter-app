@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
  class Sitter extends Component {
@@ -18,13 +19,18 @@ import { connect } from 'react-redux';
                 <div>Email: {parents.email}</div>
                 <div>Additional Information: {parents.additionalInfo}</div>
              </li>
+             
   })
     return (
 
       <div>
       <ul id="parentsList">
             {parents}
+          <Link to="/">
+            <button>Done</button>
+          </Link>
       </ul>
+      
     </div>
     )
   }

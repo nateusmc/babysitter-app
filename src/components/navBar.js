@@ -1,6 +1,8 @@
 import React from 'react';
 import './navBar.css';
 
+
+
 export default function Nav() {
 
     return(

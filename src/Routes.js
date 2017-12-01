@@ -8,6 +8,7 @@ import './index.css';
 import Home from './components/home';
 import ParentalInfo from './components/parentalInfo';
 import Sitter from './components/sitterPage';
+import Nav from './components/navBar';
 import { connect } from 'react-redux';
 
 class Routes extends Component {

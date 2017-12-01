@@ -70,10 +70,13 @@ export const addParentsInfo = (parents) => dispatch => {
       return res.json();
   }).then(
       parents => {
+          window.location = '/'
         dispatch(addParentsSuccess(parents))
       }
   )
-  .catch(err => dispatch(fetchParentsError(err)))
+  
+  .catch(err => 
+    dispatch(fetchParentsError(err)))
 }
 
 

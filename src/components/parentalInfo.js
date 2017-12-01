@@ -5,9 +5,8 @@ import {addParentsInfo} from '../actions';
 
 class ParentalInfo extends Component {
 
-  onSubmit(e) {
+  onClick(e) {
     e.preventDefault();
-
     const parent = {
       firstName: this.firstName.value,
       lastName: this.lastName.value,
@@ -35,7 +34,7 @@ class ParentalInfo extends Component {
     return (
       <div>
         <fieldset>
-          <form>
+          <form onSubmit={e => this.onClick(e)}>
             <legend>Sign Up</legend>
             <div>
               <label htmlFor="firstName">First Name:
@@ -73,8 +72,7 @@ class ParentalInfo extends Component {
               <label htmlFor="additionalInfo">Additional Info:
               </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text"/>
             </div>
-            <button type="submit" onClick={e => this.onSubmit(e)}>Post Job</button>
- 
+            <button type="submit">Post Job</button>
           </form>
         </fieldset>
       </div>
