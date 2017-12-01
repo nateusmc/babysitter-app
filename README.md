@@ -36,14 +36,20 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 
 # Wireframe:
 
+#
+Homepage
+#
+
 <img src="public/photos/WireframePart1.png"/>
 
 #
+Parents Info Form
 #
 
 <img src="public/photos/WireframePart2.png"/>
 
 #
+List of local families after searching
 #
 
 <img src="public/photos/WireframePart3.png"/>
@@ -54,14 +60,20 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 
 # Screenshots of Live Site
 
+#
+Homepage
+#
+
 <img src="public/photos/LivePage1.png"/>
 
 #
+Parents Info Form
 #
 
 <img src="public/photos/LivePage2.png"/>
 
 #
+List of local families after searching
 #
 
 <img src="public/photos/LivePage3.png"/>
