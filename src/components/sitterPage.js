@@ -13,6 +13,9 @@ import { connect } from 'react-redux';
                 <div>Child's Age: {parents.ageOfChild}</div>
                 <div>Location: {parents.zipcode}</div>
                 <div>Date Needed: {parents.dateNeeded}</div>
+                <div>Start Time: {parents.startTime}</div>
+                <div>End Time: {parents.endTime}</div>
+                <div>Email: {parents.email}</div>
                 <div>Additional Information: {parents.additionalInfo}</div>
              </li>
   })
