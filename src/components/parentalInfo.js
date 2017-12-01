@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import {addParentsInfo} from '../actions';
+import './parentalInfo.css';
 
 class ParentalInfo extends Component {
 
@@ -32,47 +33,47 @@ class ParentalInfo extends Component {
 
   render() {
     return (
-      <div>
-        <fieldset>
-          <form onSubmit={e => this.onClick(e)}>
-            <legend>Sign Up</legend>
-            <div>
+      <div class="container">
+        <fieldset >
+        <legend>Sign Up</legend>
+          <form className="parentForm" onSubmit={e => this.onClick(e)}>
+            <div className="formGroup">
               <label htmlFor="firstName">First Name:
-              </label><input ref={input => this.firstName = input} id="firstName" name="firstName" type="text" required/>
+              </label><input ref={input => this.firstName = input} id="firstName" name="firstName" type="text" placeholder="First Name" required/>
             </div>
-            <div>
+            <div className="formGroup">
               <label htmlFor="lastName">Last Name:
               </label><input ref={input => this.lastName = input} id="lastName" name="lastName" type="text" required/>
             </div>
-            <div>
+            <div className="formGroup">
               <label htmlFor="ageOfChild">Age of Child:
               </label><input ref={input => this.ageOfChild = input} id="ageOfChild" name="ageOfChild" type="text" required/>
             </div>
-            <div>
+            <div className="formGroup">
               <label htmlFor="zipcode">Zipcode:
-              </label><input ref={input => this.zipcode = input} id="zipcode" name="zipcode" type="text" minLength="5" maxLength="5"/>
+              </label><input ref={input => this.zipcode = input} id="zipcode" name="zipcode" type="text" placeholder="5 Digit ZIP Code" minLength="5" maxLength="5"/>
             </div>
-            <div>
-              <label htmlFor="dateNeeded">Date Needed:
-              </label><input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="date"/>
+            <div className="formGroup">
+              <label htmlFor="dateNeeded">Date Needed:</label>
+              <input ref={input => this.dateNeeded = input} id="dateNeeded" name="dateNeeded" type="date" required/>
             </div>
-            <div>
+            <div className="formGroup">
               <label htmlFor="startTime">Start Time:
               </label><input ref={input => this.startTime = input} id="startTime" name="startTime" type="text" required/>
             </div>
-            <div>
+            <div className="formGroup">
               <label htmlFor="endTime">End Time:
               </label><input ref={input => this.endTime = input} id="endTime" name="endTime" type="text" required/>
             </div>
-            <div>
+            <div className="formGroup">
               <label htmlFor="email">Email:
               </label><input ref={input => this.email = input} id="emailAddress" name="email" type="email" required/>
             </div>
-            <div>
+            <div className="formGroup">
               <label htmlFor="additionalInfo">Additional Info:
               </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text"/>
             </div>
-            <button type="submit">Post Job</button>
+            <button type="submit" className="button">Post Job</button>
           </form>
         </fieldset>
       </div>
