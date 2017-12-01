@@ -1,16 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './navBar.css';
-
 
 
 
 export default function Nav() {
 
     return(
-        <nav>
-            <ul>
-                <li className="navLi"><a className="navAnchor" href="#">Baby Sitter App</a></li>
-            </ul>
-        </nav>
+        <div>
+                <Link to="/"><img className="logo" src="../../photos/SitterFinder.png" alt="Sitter-Finder"/></Link>
+        </div>
     )
 }

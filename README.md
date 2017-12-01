@@ -28,13 +28,13 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 #Wireframe and Functional Specifications
 Located in the resources folder
 
-<img src="photos/WireframePart1.png"/>
+<img src="public/photos/WireframePart1.png"/>
 #
 
-<img src="photos/WireframePart2.png"/>
+<img src="public/photos/WireframePart2.png"/>
 #
 
-<img src="photos/WireframePart3.png"/>
+<img src="public/photos/WireframePart3.png"/>
 
 #
 #
