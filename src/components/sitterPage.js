@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
  class Sitter extends Component {
 
-  
-  render() { 
+
+  render() {
 
     const parents = this.props.parents.map((parents, index) => {
-      return <li key={index}> 
-                <div>Parent's Name: {parents.name}</div>
+      return <li key={index}>
+              <div>Parent's Name: {parents.name}</div>
                 <div>Child's Age: {parents.ageOfChild}</div>
                 <div>Location: {parents.zipcode}</div>
                 <div>Date Needed: {parents.dateNeeded}</div>
@@ -20,7 +20,7 @@ import { connect } from 'react-redux';
              </li>
   })
     return (
-    
+
       <div>
       <ul id="parentsList">
             {parents}

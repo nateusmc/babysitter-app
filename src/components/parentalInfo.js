@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import {addParentsInfo} from '../actions'
-import { toggleForm } from '../actions';
 
 class ParentalInfo extends Component {
 
@@ -30,18 +29,9 @@ class ParentalInfo extends Component {
     this.additionalInfo.value = '';
   }
 
-  onTap(e) {
-    this.props.dispatch(toggleForm())
-  }
-
   render() {
     return (
       <div>
-      <div>
-        <button type="button" onClick={e => this.onTap(e)}>I'm a Parent Searching for a Sitter</button>
-      </div>
-
-      {this.props.visible &&
         <fieldset>
           <form>
             <legend>Sign Up</legend>
@@ -84,9 +74,7 @@ class ParentalInfo extends Component {
             <button type="submit" onClick={e => this.onClick(e)}>Post Job</button>
           </form>
         </fieldset>
-
-    }
-  </div>
+      </div>
   )
   }
 }

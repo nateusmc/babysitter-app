@@ -14,12 +14,14 @@ const initialState = {
   loading: false,
   error: null,
   visible: false,
+  redirectToSitterPage: false,
 }
 
 export default (state = initialState, action) => {
   if (action.type === FETCH_PARENTS_SUCCESS) {
     return Object.assign({}, state, {
-      parents: action.parents
+      parents: action.parents,
+      redirectToSitterPage: true
     })
   }
 
