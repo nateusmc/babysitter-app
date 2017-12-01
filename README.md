@@ -25,29 +25,36 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 #
 #
 
-#Wireframe and Functional Specifications
-Located in the resources folder
+Wireframe:
 
 <img src="public/photos/WireframePart1.png"/>
-#
+
 
 <img src="public/photos/WireframePart2.png"/>
-#
+
 
 <img src="public/photos/WireframePart3.png"/>
 
 #
 #
 
-#Live Link to Deployed Site
+Live Link to Deployed Site:
 https://sitter-finder.netlify.com/
 
 #
 #
-#Screenshots of Live Site
 
-<!-- Insert Screenshot of Live site here -->
+Screenshots of Live Site
 
+<img src="public/photos/LivePage1.png"/>
+
+
+<img src="public/photos/LivePage2.png"/>
+
+
+<img src="public/photos/LivePage3.png"/>
+
+#
 #
 #
 
