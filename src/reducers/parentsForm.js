@@ -7,6 +7,9 @@ const initialState = {
   ageOfChild: null,
   zipcode: null,
   dateNeeded: null,
+  startTime: null,
+  endTime: null,
+  email: null,
   additionalInfo: null,
   loading: false,
   error: null,
@@ -36,6 +39,9 @@ export default (state = initialState, action) => {
       ageOfChild: action.ageOfChild,
       zipcode: action.zipcode,
       dateNeeded: action.dateNeeded,
+      startTime: action.startTime,
+      endTime: action.endTime,
+      email: action.email,
       additionalInfo: action.additionalInfo
     })
   }
@@ -47,6 +53,9 @@ export default (state = initialState, action) => {
       ageOfChild: action.ageOfChild,
       zipcode: action.zipcode,
       dateNeeded: action.dateNeeded,
+      startTime: action.startTime,
+      endTime: action.endTime,
+      email: action.email,
       additionalInfo: action.additionalInfo
     })
   }
