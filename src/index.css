@@ -1,5 +1,36 @@
+html {
+  font: 120%/1.5 sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+
+}
+
+ul {
+  list-style: none;
+  padding-left: 0
+}
+
+.routerWrapper {
+  width: 55%;
+  max-width: 1000px;
+  margin: 5rem auto;
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button:hover {
+    background-color: rgb(65, 100, 65)
 }

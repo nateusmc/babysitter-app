@@ -1,7 +1,5 @@
 .navLi {
-  display: inline-block;
+  display: flex;
   list-style: none;
 }
-.navAnchor {
-  margin-right: 250px;
-}
+

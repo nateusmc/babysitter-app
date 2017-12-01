@@ -15,7 +15,7 @@ export const fetchParents = (zipcode) => dispatch => {
                 return res.json();
           }).then(
               parents => {
-                  console.log(parents)
+                  console.log("parents")
                 dispatch(fetchParentsSuccess(parents))
               }
             )
