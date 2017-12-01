@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux'
-import {addParentsInfo} from '../actions'
+import { connect } from 'react-redux';
+// import { Link } from 'react-router-dom';
+import {addParentsInfo} from '../actions';
 
 class ParentalInfo extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+
     const parent = {
       firstName: this.firstName.value,
       lastName: this.lastName.value,
@@ -71,7 +73,8 @@ class ParentalInfo extends Component {
               <label htmlFor="additionalInfo">Additional Info:
               </label><input ref={input => this.additionalInfo = input} id="additionalInfo" name="additionalInfo" type="text"/>
             </div>
-            <button type="submit" onSubmit={e => this.onSubmit(e)}>Post Job</button>
+            <button type="submit" onClick={e => this.onSubmit(e)}>Post Job</button>
+ 
           </form>
         </fieldset>
       </div>
