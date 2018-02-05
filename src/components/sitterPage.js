@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './sitterPage.css'
+import Nav from './navBar';
+
 
  class Sitter extends Component {
 
-
   render() {
-   
-
     const parents = this.props.parents.map((parents, index) => {
       return (
       <li key={index} className="localFamily">
@@ -21,19 +20,20 @@ import './sitterPage.css'
                 <div>Email: <a href={`mailto:${parents.email}`}>{parents.email}</a></div>
                 <div>Additional Information: {parents.additionalInfo}</div>
              </li>
-      )     
+           )
   })
 
     return (
       <div>
-
+      <div>
+        <Nav />
+      </div>
       <ul id="parentsList">
             {parents}
           <Link to="/">
             <button className="button">Done</button>
           </Link>
       </ul>
-      
     </div>
     )
   }

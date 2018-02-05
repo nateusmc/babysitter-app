@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import {addParentsInfo} from '../actions';
 import './parentalInfo.css';
+import Nav from './navBar';
 
 class ParentalInfo extends Component {
 
@@ -34,6 +34,9 @@ class ParentalInfo extends Component {
   render() {
     return (
       <div className="container">
+        <div>
+          <Nav />
+        </div>
         <fieldset >
         <legend>Sign Up</legend>
           <form className="parentForm" onSubmit={e => this.onClick(e)}>

@@ -1,5 +1,9 @@
 .navLi {
-  display: flex;
+  display: block;
   list-style: none;
 }
 
+.logo {
+  width: 150px;
+  height: 100px;
+}

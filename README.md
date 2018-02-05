@@ -1,6 +1,15 @@
 # Sitter Finder App
 
-<img src="photos/SitterFinder.png"/>
+# Live Link to Deployed Site:
+https://sitter-finder.netlify.com/
+
+#
+
+<img src="public/photos/SitterFinder.png"/>
+
+#
+
+
 
 Sitter Finder's mission is to make child care more affordable and accessible to parents. The technology we're building simplifies the process of finding a baby sitter for a special occasion or if needed on a regular schedule. The technology will also allow parents to search for certified sitters based on location.
 
@@ -8,7 +17,7 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 #
 #
 
-#Features:
+# Features:
 
 -Parents can fill out a form to request a babysitter for a specific date.
 #
@@ -25,29 +34,39 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 #
 #
 
-#Wireframe and Functional Specifications
-Located in the resources folder
+# Wireframe:
 
-<img src="photos/WireframePart1.png"/>
-#
+# Homepage
 
-<img src="photos/WireframePart2.png"/>
-#
+<img src="public/photos/WireframePart1.png"/>
 
-<img src="photos/WireframePart3.png"/>
+# Parents Info Form
 
-#
-#
+<img src="public/photos/WireframePart2.png"/>
 
-#Live Link to Deployed Site
-https://sitter-finder.netlify.com/
+# List of local families after searching
+
+<img src="public/photos/WireframePart3.png"/>
 
 #
 #
-#Screenshots of Live Site
 
-<!-- Insert Screenshot of Live site here -->
 
+# Screenshots of Live Site:
+
+# Homepage
+
+<img src="public/photos/LivePage1.png"/>
+
+# Parents Info Form
+
+<img src="public/photos/LivePage2.png"/>
+
+# List of local families after searching
+
+<img src="public/photos/LivePage3.png"/>
+
+#
 #
 #
 
