@@ -15,11 +15,11 @@
 
 -Dashboard-Parent
     -Dashboard-Parent
-    -ReturnedSittersDetail
+    -SitterSearchDetail
     -ContactSitterForm
     -ParentNotifications
 -Dashboard-Sitter
     -DashboardSitter
-    -ReturnedParentsDetail
+    -ParentSearchDetail
     -ContactParentForm
     -SitterNotifications
