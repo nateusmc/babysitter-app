@@ -75,15 +75,3 @@ export default (state = initialState, action) => {
 
     return state
 }
-
-
-
-// const parentsForm = (state = initalState, action) => {
-//   switch(action.type) {
-//     case 'ADD_PARENTS_INFO':
-//       return {}
-
-//     default:
-//       return state
-//   }
-// }

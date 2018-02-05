@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './sitterPage.css'
-// import Nav from './navBar';
-
 
  class Sitter extends Component {
 
@@ -12,7 +10,7 @@ import './sitterPage.css'
    
 
     const parents = this.props.parents.map((parents, index) => {
-      return 
+      return (
       <li key={index} className="localFamily">
               <div>Parent's Name: {parents.name}</div>
                 <div>Child's Age: {parents.ageOfChild}</div>
@@ -23,8 +21,9 @@ import './sitterPage.css'
                 <div>Email: <a href={`mailto:${parents.email}`}>{parents.email}</a></div>
                 <div>Additional Information: {parents.additionalInfo}</div>
              </li>
-             
+      )     
   })
+
     return (
       <div>
 

@@ -33,7 +33,7 @@ class ParentalInfo extends Component {
 
   render() {
     return (
-      <div class="container">
+      <div className="container">
         <fieldset >
         <legend>Sign Up</legend>
           <form className="parentForm" onSubmit={e => this.onClick(e)}>
