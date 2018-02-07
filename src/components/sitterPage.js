@@ -39,9 +39,8 @@ import Nav from './navBar';
   }
 }
 
-const mapStateToProps = ({parentsForm: state}, props) => {
-  return {
+const mapStateToProps = state => ({
   parents: state.parents,
-}}
+})
 
 export default connect(mapStateToProps)(Sitter);
