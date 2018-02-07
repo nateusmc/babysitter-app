@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import parentsForm from './parentsForm';
+
+import parentsReducer from './parents';
 
 const rootReducer = combineReducers({
-  parentsForm
+  parents: parentsReducer
 })
 
 export default rootReducer;

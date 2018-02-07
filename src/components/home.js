@@ -53,10 +53,9 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({parentsForm: state}, props) => {
-  return {
+const mapStateToProps = state => ({
   parents: state.parents,
   visible: state.visible,
-}}
+})
 
 export default connect(mapStateToProps)(Home);

@@ -83,10 +83,9 @@ class ParentalInfo extends Component {
   )
   }
 }
-const mapStateToProps = ({
-  parentsForm: state
-}, props) => {
-  return {parents: state.parents, visible: state.visible}
-}
+const mapStateToProps = state => ({
+  parents: state.parents, 
+  visible: state.visible
+})
 
 export default connect(mapStateToProps)(ParentalInfo);
