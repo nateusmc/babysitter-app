@@ -13,7 +13,7 @@ export const toggleView = (selectedView) => ({
     selectedView,
   });
 
-  export const toggleModal = (boolean) => ({
-    type: types.TOGGLE_MODAL,
-    boolean
-  })
+export const toggleModal = (boolean) => ({
+  type: types.TOGGLE_MODAL,
+  boolean
+})

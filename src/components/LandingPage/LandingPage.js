@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { toggleView } from '../../actions/views';
+import * as actions from '../../actions';
 import { Redirect } from 'react-router-dom';
 
 import Footer from './Footer';
@@ -9,7 +9,8 @@ import './LandingPage.css';
 
 export class LandingPage extends Component {
     componentDidMount() {
-        // this.props.dispatch(toggleView('landing-page'));
+        console.log(this.props)
+        this.props.dispatch(actions.toggleView('landing-page'));
     }
 
     onSubmit(e) {
@@ -19,7 +20,7 @@ export class LandingPage extends Component {
         this.input.value= '';
       }
 
-    render(){
+    render() {
         // need conditional to redirect to parent dash || sitter dash....
 
         if(this.props.loggedIn){
@@ -37,7 +38,7 @@ export class LandingPage extends Component {
                 </div>
                 <form className="zipCodeForm" onSubmit={e => this.onSubmit(e)}>
                     <div>
-                        <label htmlFor="zipInput">I'm a babysitter looking for families in  </label>
+                        <label htmlFor="zipInput">I'm looking for a sitter in  </label>
                         <input id="zipInput"ref={input => this.input = input} type="text"       placeholder="Enter Zip Code"/>
                         <button className="button" type="submit">Search</button>
                     </div>

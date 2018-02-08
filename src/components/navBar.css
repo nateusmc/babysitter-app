@@ -7,3 +7,10 @@
   width: 150px;
   height: 100px;
 }
+
+.nav-bttn {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1em;
+
+}

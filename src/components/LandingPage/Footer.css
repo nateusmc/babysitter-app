@@ -1,0 +1,26 @@
+.footer-container {
+    background: rgb(242, 242, 242);
+    margin-top: 4px;
+  }
+
+.footer-links {
+text-decoration: none;
+color: rgb(85, 85, 85);
+font-size: 1.1em;
+}
+
+ul {
+list-style-type: none;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 0
+}
+
+
+li {
+line-height: 30px;
+font-size: 0.65em;
+font-weight: 100;
+
+}
