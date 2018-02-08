@@ -8,7 +8,7 @@ import Input from '../Input';
 import { login } from '../../actions/auth';
 import { required, nonEmpty } from '../../validators';
 
-import './loginPageForm.css'
+import './LoginPageForm.css'
 
 export class LoginPageForm extends React.Component {
     onSubmit(values) {
