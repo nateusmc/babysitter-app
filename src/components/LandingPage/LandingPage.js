@@ -9,7 +9,6 @@ import './LandingPage.css';
 
 export class LandingPage extends Component {
     componentDidMount() {
-        console.log(this.props)
         this.props.dispatch(actions.toggleView('landing-page'));
     }
 

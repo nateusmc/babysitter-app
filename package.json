@@ -3,14 +3,8 @@
   "version": "0.1.0",
   "dependencies": {
     "font-awesome": "^4.7.0",
-<<<<<<< HEAD
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-=======
-    "jwt-decode": "^2.2.0",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
->>>>>>> cc2c209020fd26cf500236eb6ad065f68840f399
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.0",
