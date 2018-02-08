@@ -7,3 +7,10 @@ export const ADD_PARENTS_INFO = 'ADD_PARENTS_INFO';
 
 // Views
 export const TOGGLE_FORM = 'TOGGLE_FORM';
+
+// Misc: Auth
+export const AUTH_REQUEST = 'AUTH_REQUEST';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const CLEAR_AUTH = 'CLEAR_AUTH';
+export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
