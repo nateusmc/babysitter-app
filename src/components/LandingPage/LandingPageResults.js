@@ -3,13 +3,13 @@ import {connect} from 'react-redux';
 import { toggleView } from '../../actions/views';
 import { Redirect } from 'react-router-dom';
 
-// need to import footer when done
+import Footer from './Footer';
 
 import './LandingPageResults.css';
 
 export class LandingPageResults extends Component {
     componentDidMount() {
-        // will dispatch toggleView
+        this.props.dispatch(toggleView('landing-page'));
     }
 
     render(){
@@ -28,6 +28,7 @@ export class LandingPageResults extends Component {
             <div className="landingPageContainer">
                 <div className="mainTagline">Find you next sitter or family now!
                 </div>
+                <Footer />
             </div>
         )
     }

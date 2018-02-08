@@ -7,6 +7,8 @@ export const ADD_PARENTS_INFO = 'ADD_PARENTS_INFO';
 
 // Views
 export const TOGGLE_FORM = 'TOGGLE_FORM';
+export const TOGGLE_VIEW = 'TOGGLE_VIEW';
+export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 
 // Misc: Auth
 export const AUTH_REQUEST = 'AUTH_REQUEST';
