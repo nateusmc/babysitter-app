@@ -9,7 +9,7 @@ import { login } from '../../actions/auth';
 import { registerUser } from '../../actions/users';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
 
-import './registrationPageForm.css'
+import './RegistrationPageForm.css'
 
 export class RegistrationPageForm extends React.Component {
     onSubmit(values) {
@@ -93,14 +93,13 @@ export class RegistrationPageForm extends React.Component {
             />
             <label htmlFor="zipcode"></label>
             <Field component={Input} type="text" name="zipcode" placeholder="zipcode"/>
-            <label className="zipcode" htmlFor="zipcode">Input your zipcode: </label>
             <Field
               component="select"
               type="role"
               name="role"
               validate={[required]}>
               <option value="Parent">Parent</option>
-              <option value="sitter">Sitter</option>
+              <option value="Sitter">Sitter</option>
             </Field>
 
             <button
