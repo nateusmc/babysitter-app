@@ -1,8 +1,46 @@
-.image img {
-    height: 200px;
-    width: 100%;
-}
-
 .locationForm {
   text-align: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.navBar {
+  display: flex;
+  justify-content: center;
+}
+
+.description {
+  display: flex;
+  margin: 0 auto;
+
+}
+
+p {
+  text-align: center;
+  margin-left: 10% !important;
+  margin-right: 10% !important;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  margin-top: 2%;
+}
+
+#zipInput {
+  margin-left: 1%;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+a {
+  text-decoration: none;
 }
