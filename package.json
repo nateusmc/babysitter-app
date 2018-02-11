@@ -4,6 +4,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "jwt-decode": "^2.2.0",
+    "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-moment": "^0.7.0",

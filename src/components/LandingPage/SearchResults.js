@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
+
+
 export class SearchResults extends Component {
 
 	render() {
@@ -13,16 +15,18 @@ export class SearchResults extends Component {
 			let sitterList, resultHeader;
 
 			sitterList = this.props.result.map((item, index) => {
-				console.log('item.bio', item)
 					return (
 						<div key={index}>
-							<ul  className="listOfSitters">
-									<li className="sitterLocation">{item.location}</li>
-									<li className="individualSitter">{item.bio}</li>
-									<li className="dateAvailable">{item.dateAvailable}</li>
-									<li className="yearsExperience">{item.yearsExperience}</li>
-							</ul>
-								<button className="contactSitterButton">Sign Up to Contact Sitter</button>
+								<ul>
+									<li className="sitterFirstName">Name: {item.sitterUserID.firstName}</li>
+									<li className="sitterLocation">Location: {item.location}</li>
+									{/* <Moment className="availability" format='MM/DD/YYYY'><li className="dateAvailable">Date Available: {item.dateAvailable}</li></Moment > */}
+									<li className="sitterRate">Rate: {item.rate}  </li>
+									<li className="sitterHeader"> {item.sitterHeader}</li>	
+									<li className="individualSitter">Bio: {item.bio}</li>
+									<li className="yearsExperience">Years Experience: {item.yearsExperience}</li>
+								</ul>
+									<button className="contactSitterButton">Sign Up to Contact Sitter</button>
 						</div>
 					)
 			})
