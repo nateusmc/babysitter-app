@@ -1,7 +1,5 @@
 # <a href="https://sitter-finder.netlify.com/">Sitter Finder</a>
 
-#
-
 <img src="public/photos/SitterFinder.png"/>
 
 #
@@ -34,8 +32,6 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 <img src="public/photos/WireframePart3.png"/>
 
 #
-#
-
 
 # Screenshots of Live Site:
 
