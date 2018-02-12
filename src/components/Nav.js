@@ -8,16 +8,18 @@ import * as actions from '../actions';
 import './Nav.css';
 
 export class Nav extends Component {
-    
+
+
+
     logOut() {
       this.props.dispatch(actions.clearAuth());
       this.props.dispatch(actions.toggleModal(false));
       clearAuthToken();
     }
-  
+
     render() {
       let landingPageTabs, parentTabs, sitterTabs, logoutTab;
-      
+
       if(this.props.currentView === 'landing-page'){
         landingPageTabs = (
           <div className="nav-button right">
@@ -26,7 +28,7 @@ export class Nav extends Component {
           </div>
         )
       }
-  
+
       if(this.props.currentView === 'signup'){
         landingPageTabs = (
           <div className="nav-button right">
@@ -35,7 +37,7 @@ export class Nav extends Component {
           </div>
         )
       }
-  
+
       if(this.props.currentView === 'login'){
         landingPageTabs = (
           <div className="nav-button right">
@@ -44,8 +46,8 @@ export class Nav extends Component {
           </div>
         )
       }
-      
-  
+
+
       if(this.props.currentView === 'parent'){
         parentTabs = (
           <div className="nav-button-container">
@@ -54,7 +56,7 @@ export class Nav extends Component {
           </div>
         )
       }
-      
+
       if(this.props.currentView === 'sitter'){
         sitterTabs = (
           <div className="nav-button">
@@ -63,7 +65,7 @@ export class Nav extends Component {
           </div>
         )
       }
-  
+
       if(this.props.currentView === 'parent' || this.props.currentView === 'sitter'){
         logoutTab = (
           <div className="nav-bttn log-out-tabs">
@@ -71,11 +73,11 @@ export class Nav extends Component {
           </div>
         )
       }
-  
+
       return(
-        <div className="nav-bar"> 
-          <h2 className="site-name"><Link to="/" className="logo-container"><img className="logo" src="" alt="logo"/><span className="sitter-finder">  SITTER FINDER</span></Link></h2>
-          
+        <div className="nav-bar">
+          <h2 className="site-name"><Link to="/" className="logo-container"><img className="logo" src="https://imgur.com/D1o9XQM.png" alt="logo"/><span className="sitter-finder">  SITTER FINDER</span></Link></h2>
+
           {landingPageTabs}
           {parentTabs}
           {sitterTabs}
@@ -85,10 +87,10 @@ export class Nav extends Component {
       )
     }
   }
-  
+
   const mapStateToProps = state => ({
     currentView: state.view.selectedView,
     // alertID: state.alert.userPanic[0] ? state.alert.userPanic[0]._id : 0,
   })
-  
+
   export default connect(mapStateToProps)(Nav)
