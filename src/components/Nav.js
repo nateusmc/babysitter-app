@@ -74,7 +74,7 @@ export class Nav extends Component {
   
       return(
         <div className="nav-bar"> 
-          <h2 className="site-name"><Link to="/" className="logo-container"><img className="logo" src="" alt="logo"/><span className="sitter-finder">  SITTER FINDER</span></Link></h2>
+          <h2 className="site-name"><Link to="/" className="logo-container"><img className="logo" src={"http://www.americantraininginc.com/wp-content/uploads/2017/02/babysitter.jpg"} alt="logo"/><span className="sitter-finder">  SITTER FINDER</span></Link></h2>
           
           {landingPageTabs}
           {parentTabs}
