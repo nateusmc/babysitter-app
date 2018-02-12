@@ -21,6 +21,16 @@ export const addParentsSuccess = parents => ({
     parents
 })
 
+// not sure if I will need.
+
+// export const fetchBioRequest = () => ({
+//     type: types.FETCH_BIO_REQUEST,
+// })
+
+// export const fetchBioSuccess = (bios) => ({
+//     type: types.FETCH_BIO_SUCCESS,
+//     bios
+// })
 // Async Actions
 
 export const addParentsInfo = (parents) => dispatch => {
@@ -35,7 +45,8 @@ export const addParentsInfo = (parents) => dispatch => {
         return Promise.reject(res.statusText)
       }
         return res.json();
-    }).then(
+    })
+    .then(
         parents => {
             window.location = '/'
           dispatch(addParentsSuccess(parents))
@@ -45,28 +56,33 @@ export const addParentsInfo = (parents) => dispatch => {
       dispatch(fetchParentsError(err)))
   }
 
-  export const fetchParents = (zipcode) => dispatch => {
-    dispatch(fetchParentsRequest())
-
-  return fetch(`${API_BASE_URL}/parents/zipcode`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({zipcode})
-  })
-      .then(res => {
-          if(!res.ok) {
-              return Promise.reject(res.statusText)
-          }
-              return res.json();
-        }).then(
-            parents => {
-                console.log("parents")
-              dispatch(fetchParentsSuccess(parents))
-            }
-          )
-            .catch(err => {
-              console.log(err)
-            dispatch(fetchParentsError(err))
-            }
-          )
+export const fetchParents = (zipcode) => dispatch => {
+	dispatch(fetchParentsRequest())
+return fetch(`${API_BASE_URL}/parents/zipcode`, {
+		method: 'POST',
+		headers: {'Content-Type': 'application/json', 'Accept': 'application/json' },
+		body: JSON.stringify({zipcode})
+})
+		.then(res => {
+				if(!res.ok) {
+						return Promise.reject(res.statusText)
+				}
+						return res.json();
+			})
+		.then(
+				parents => {
+						console.log("parents")
+					dispatch(fetchParentsSuccess(parents))
+				}
+			)
+		.catch(err => {
+			console.log(err)
+		dispatch(fetchParentsError(err))
+		}
+	)
 }
+
+// need an async action to create a parent bio
+
+
+// need an async action to retrieve all parent bios
