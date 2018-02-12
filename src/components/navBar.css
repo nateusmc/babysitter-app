@@ -8,3 +8,10 @@
   height: 90%;
   padding-left: 5%;
 }
+
+.nav-bttn {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1em;
+
+}

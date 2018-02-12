@@ -7,8 +7,10 @@ export default function Footer(){
     return(
         <div className="footerContainer">
             <div className="projectContainer">
-                <li><Link className='footerLinks' to='/signup'>Register</Link></li>
-                <li><Link className='footerLinks' to='/login'>Log In</Link></li>
+                <ul>
+                    <li><Link className='footerLinks' to='/signup'>Register</Link></li>
+                    <li><Link className='footerLinks' to='/login'>Log In</Link></li>
+                </ul>
             </div>
         </div>
     )
