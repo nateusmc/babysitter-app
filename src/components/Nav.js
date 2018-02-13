@@ -23,8 +23,8 @@ export class Nav extends Component {
       if(this.props.currentView === 'landing-page'){
         landingPageTabs = (
           <div className="nav-button right">
-            <button className="nav-bttn signup"><Link to="/signup" className="nav-bttn">Signup</Link></button>
-            <button className="nav-bttn login"><Link to="/login" className="nav-bttn">Login</Link></button>
+            <button className="nav-bttn signup btn"><Link to="/signup" className="nav-bttn">Signup</Link></button>
+            <button className="nav-bttn login btn"><Link to="/login" className="nav-bttn">Login</Link></button>
           </div>
         )
       }
@@ -32,8 +32,8 @@ export class Nav extends Component {
       if(this.props.currentView === 'signup'){
         landingPageTabs = (
           <div className="nav-button right">
-            <button className="nav-bttn signup"><Link to="/signup" className="nav-bttn">Signup</Link></button>
-            <button className="nav-bttn login"><Link to="/login" className="nav-bttn">Login</Link></button>
+            <button className="nav-bttn signup btn"><Link to="/signup" className="nav-bttn">Signup</Link></button>
+            <button className="nav-bttn login btn"><Link to="/login" className="nav-bttn">Login</Link></button>
           </div>
         )
       }
@@ -41,8 +41,8 @@ export class Nav extends Component {
       if(this.props.currentView === 'login'){
         landingPageTabs = (
           <div className="nav-button right">
-            <button className="nav-bttn signup"><Link to="/signup" className="nav-bttn">Signup</Link></button>
-            <button className="nav-bttn login"><Link to="/login" className="nav-bttn">Login</Link></button>
+            <button className="nav-bttn signup btn"><Link to="/signup" className="nav-bttn">Signup</Link></button>
+            <button className="nav-bttn login btn"><Link to="/login" className="nav-bttn">Login</Link></button>
           </div>
         )
       }
@@ -69,14 +69,17 @@ export class Nav extends Component {
       if(this.props.currentView === 'parent' || this.props.currentView === 'sitter'){
         logoutTab = (
           <div className="nav-bttn log-out-tabs">
-            <button className="logout" onClick={() => this.logOut()}><Link to="/" className="nav-bttn">Logout</Link></button>
+            <button className="logout btn" onClick={() => this.logOut()}><Link to="/" className="nav-bttn">Logout</Link></button>
           </div>
         )
       }
 
       return(
         <div className="nav-bar">
-          <h2 className="site-name"><Link to="/" className="logo-container"><img className="logo" src="https://imgur.com/D1o9XQM.png" alt="logo"/><span className="sitter-finder">  SITTER FINDER</span></Link></h2>
+            <Link to="/" className="logo-container">
+              <img className="logo" src="https://imgur.com/D1o9XQM.png" alt="logo"/>
+              <span className="sitter-finder">Sitter Finder</span>
+            </Link>
 
           {landingPageTabs}
           {parentTabs}

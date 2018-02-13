@@ -1,0 +1,65 @@
+:root {
+    --space: 1.5em 0;
+    --space: 2em 0;
+}
+
+.landingPageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 85vh;
+}
+
+.Site-Content {
+    flex: 1 0 auto;
+    padding: var(--space) var(--space) 0;
+    width: 100%;
+}
+
+.Site-Content:after {
+    content: '\00a0';
+    display: block;
+    margin-top: var(--space);
+    height: 0;
+    visibility: hidden;
+}
+
+/* .footer {
+  border-top: 1px solid black;
+} */
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+}
+
+.legend {
+  margin-top: 20%;
+  margin-left: 15%;
+  font-size: 24px;
+}
+
+.descriptionWrapper {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 6%;
+  text-align: center;
+}
+
+.description {
+  font-size: 28px;
+}
+
+.label {
+  font-size: 24px;
+  padding-right: 10px;
+  margin-top: 30px;
+}
+
+.searchSitterByZipInput {
+  height: 20px;
+}
+
+.searchButton {
+  height: 24px;
+}
