@@ -2,8 +2,8 @@ import * as types from '../actions/actionType';
 
 const initialState = {
     zipcodeSearches: [],
-		sitters: [],
-		initialSearch: false,
+	localSitters: [],
+	initialSearch: false,
     loading: false,
     error: false,
 }
@@ -24,7 +24,7 @@ const sittersReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 loading: false,
                 error: false,
-                sitters: action.sitters,
+                localSitters: action.sitters,
         		});
         case types.SEARCH_SITTERS_BY_ZIP_SUCCESS:
             return Object.assign({}, state, {
