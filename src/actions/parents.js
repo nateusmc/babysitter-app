@@ -19,6 +19,20 @@ export const fetchParentsError = error => ({
 export const addParentsSuccess = parents => ({
     type: types.ADD_PARENTS_SUCCESS,
     parents
+});
+
+export const addParentsInfoRequest = () => ({
+    type: types.ADD_PARENTS_INFO_REQUEST,
+})
+
+export const addParentsInfoSuccess = parentalInfo => ({
+    type: types.ADD_PARENTS_INFO_SUCCESS,
+    parentalInfo
+})
+
+export const addParentsInfoError = error => ({
+    type: types.ADD_PARENTS_INFO_ERROR,
+    error
 })
 
 // not sure if I will need.
