@@ -1,8 +1,18 @@
 import { combineReducers } from 'redux';
-import parentsForm from './parentsForm';
+import { reducer as formReducer } from 'redux-form';
+
+import parentsReducer from './parents';
+import authReducer from './auth';
+import viewReducer from './views';
+import sittersReducer from './sitters';
 
 const rootReducer = combineReducers({
-  parentsForm
+  parents: parentsReducer,
+  auth: authReducer,
+  view: viewReducer,
+  form: formReducer,
+  sitters: sittersReducer,
+  
 })
 
 export default rootReducer;
