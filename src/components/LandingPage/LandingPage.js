@@ -33,7 +33,7 @@ export class LandingPage extends Component {
       }
     }
 
-    return (<div className="landingPageContainer Site">
+    return (<div className="landingPageContainer">
       <div className="Site-Content">
         <div className="descriptionWrapper">
         <div className="description">Sitter Finder's mission is to make child care more affordable and accessable to parents. The technology we're building simplifies the process of finding a baby sitter for a special occasion or if needed on a regular schedule. The technology will also allow parents to search for certified sitters based on location.
@@ -56,9 +56,7 @@ export class LandingPage extends Component {
           <SearchResults/>
         </div>
       </div>
-
         <Footer/>
-
     </div>
   );
   }

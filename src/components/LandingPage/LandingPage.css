@@ -23,10 +23,6 @@
     visibility: hidden;
 }
 
-/* .footer {
-  border-top: 1px solid black;
-} */
-
 .searchForm {
   display: flex;
   justify-content: center;
