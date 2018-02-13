@@ -21,10 +21,12 @@ Sitter Finder's mission is to make child care more affordable and accessible to 
 
 <img src="assets/Landing-Login-SignUp-Pages.png"/>
 
+
 <img src="assets/Views-by-role.png"/>
 
 
 # Screenshots of Live Site:
+
 
 ## Collaborators
 <a href="https://github.com/F-Adam-B">@F-Adam-B</a>, <a href="https://github.com/nateusmc">@nateusmc</a>
