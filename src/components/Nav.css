@@ -41,11 +41,12 @@ img {
 
 a {
   text-decoration: none;
+  color: white !important;
 }
 
 span {
   font-size: 30px;
-  font-color: black;
+  color: black !important;
 }
 
 .btn {

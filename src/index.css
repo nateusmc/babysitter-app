@@ -20,6 +20,10 @@ ul {
   margin: 5rem auto;
 }
 
+a {
+  color: black;
+}
+
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
