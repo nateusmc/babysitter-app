@@ -35,6 +35,11 @@ export const addParentsInfoError = error => ({
     error
 })
 
+export const searchParentsByZipSuccess = (zipcodes) => ({
+    type: types.SEARCH_PARENTS_BY_ZIP_SUCCESS,
+    zipcodes,
+})
+
 // not sure if I will need.
 
 // export const fetchBioRequest = () => ({
@@ -96,7 +101,13 @@ return fetch(`${API_BASE_URL}/parents/zipcode`, {
 	)
 }
 
-// need an async action to create a parent bio
 
-
-// need an async action to retrieve all parent bios
+export const searchParents = zipcode => (dispatch) => {
+    dispatch(fetchParentsRequest());
+    return fetch(`${API_BASE_URL}/parents/${zipcode}`)
+    .then(res => res.json())
+    .then(parents => dispatch(searchParentsByZipSuccess(parents)))
+    .catch((err) => {
+        dispatch(fetchParentsError(err));
+    });
+};

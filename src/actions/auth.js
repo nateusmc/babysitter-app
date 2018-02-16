@@ -53,12 +53,13 @@ export const login = (email, password) => dispatch => {
             // Reject any requests which don't return a 200 status, creating
             // errors which follow a consistent format
             .then(res => {
-                console.log('res', res)
                 normalizeResponseErrors(res)})
             .then(res => {
+                console.log('res', res)
                 res.json()})
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
             .catch(err => {
+                console.log('err', err)
                 const {code} = err;
                 const message =
                     code === 401

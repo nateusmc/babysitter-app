@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom'
 import * as actions from '../../actions';
-import BioParentForm from '../BioParent/BioParentForm';
-import {searchSitters} from '../../actions/sitters';
+import BioSitterForm from '../BioSitter/BioSitterForm';
+import {searchParents} from '../../actions/parents';
 
 import './DashboardSitter.css';
 
 export class DashboardSitter extends Component{
 	componentDidMount(){
-			this.props.dispatch(actions.toggleView('parent'));
-			this.props.dispatch(searchSitters(this.props.location));
+			this.props.dispatch(actions.toggleView('sitter'));
+			this.props.dispatch(searchParents(this.props.location));
 	}
 
 	render(){
 		if(this.props.createdBios.length === 0){
 			return(
 				<div className="parentalBioForm">
-					<BioParentForm />
+					<BioSitterForm />
 				</div>
 			)
 		}
@@ -45,8 +45,8 @@ export class DashboardSitter extends Component{
 
 const mapStateToProps = state => ({
 	userId: state.auth.currentUser.id,
-	createdBios: state.parents.createdBio,
-	location: state.parents.zipcode  
+	createdBios: state.sitters.createdBio,
+	location: state.sitters.zipcode  
 })
 
 export default connect(mapStateToProps)(DashboardSitter);

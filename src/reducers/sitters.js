@@ -6,6 +6,7 @@ const initialState = {
 	initialSearch: false,
 	loading: false,
 	error: false,
+	createdBio: [],
 }
 
 const sittersReducer = (state = initialState, action) => {
