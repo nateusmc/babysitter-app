@@ -1,0 +1,10 @@
+.parentBio {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 4%;
+}
+
+.createBioInput, .startTime, .endTime, .numberOfChildren, .ageOfChild, .zipcode, .additionalInfo, .parentBioFormButton {
+  font-size: 18px;
+}

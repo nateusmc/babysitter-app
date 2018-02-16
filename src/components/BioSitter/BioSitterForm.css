@@ -1,0 +1,10 @@
+.sitterBio {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 4%;
+}
+
+.dateNeeded, .sitterLocation, .sitterRate, .sitterHeader, .zipcode, .bio, .sitterBioFormButton {
+    font-size: 18px;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import './BioSitterForm';
+import './BioSitterForm.css';
 
 export class BioSitterForm extends Component {
 	handleAdd = (e) => {
@@ -30,7 +30,7 @@ export class BioSitterForm extends Component {
 						<form className="sitterBioForm" onSubmit={e=> this.handleAdd(e)}>
 							<legend><h3>Please Describe Yourself </h3></legend>
 							<label htmlFor="sitterBioForm"></label>
-							<input  
+							<input
 								className="dateNeeded"
 								type="date"
 								name="dateNeeded"
@@ -58,7 +58,7 @@ export class BioSitterForm extends Component {
 								ref={input => this.yearsExperience = input}
 								/>
 							<label htmlFor="sitterHeader"></label>
-							<input	
+							<input
 								className="sitterHeader"
 								type="text"
 								name="sitterHeader"
@@ -67,7 +67,7 @@ export class BioSitterForm extends Component {
 								ref={input => this.sitterHeader = input}
 								/>
 							<label htmlFor="location"></label>
-							<input	
+							<input
 								className="zipcode"
 								type="text"
 								name="zipcode"
@@ -76,15 +76,15 @@ export class BioSitterForm extends Component {
 								ref={input => this.location = input}
 								/>
 							<label htmlFor="additionalInfo"></label>
-							<input	
+							<input
 								className="bio"
 								type="text"
 								name="bio"
 								id="bio"
 								placeholder="Additional information"
 								ref={input => this.bio = input}
-								/>	
-								<button className="sitterBioFormButton"type="submit">Submit</button>
+								/>
+								<button className="sitterBioFormButton" type="submit">Submit</button>
 						</form>
 
 					</div>

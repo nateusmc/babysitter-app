@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import  {addParentBio} from '../../actions/parents'
-import './BioParentForm';
+import './BioParentForm.css';
 
 export class BioParentForm extends Component {
 	handleAdd = (e) => {
@@ -11,7 +11,7 @@ export class BioParentForm extends Component {
 				startTime: this.startTime.value,
 				endTime: this.endTime.value,
 				numberOfChildren: this.numberOfChildren.value,
-				childAge: this.childAge.value,
+				ageOfChild: this.childAge.value,
 				location: this.location.value,
 				additionalInfo: this.additionalInfo.value,
 				id: this.props.currentUser.id,
@@ -33,7 +33,7 @@ export class BioParentForm extends Component {
 						<form className="parentBioForm" onSubmit={e=> this.handleAdd(e)}>
 							<legend><h3>Please Describe Your Needs</h3></legend>
 							<label htmlFor="dateNeeded"></label>
-							<input  
+							<input
 								className="createBioInput"
 								type="date"
 								name="dateNeeded"
@@ -69,17 +69,17 @@ export class BioParentForm extends Component {
 								placeholder="Number of Children in Household"
 								ref={input => this.numberOfChildren = input}
 								/>
-							<label htmlFor="childAge"></label>
-							<input	
-								className="childAge"
+							<label htmlFor="ageOfChild"></label>
+							<input
+								className="ageOfChild"
 								type="text"
-								name="childAge"
-								id="childAge"
+								name="ageOfChild"
+								id="ageOfChild"
 								placeholder="How old is your child/ren"
-								ref={input => this.childAge = input}
+								ref={input => this.ageOfChild = input}
 								/>
 							<label htmlFor="location"></label>
-							<input	
+							<input
 								className="zipcode"
 								type="text"
 								name="zipcode"
@@ -88,7 +88,7 @@ export class BioParentForm extends Component {
 								ref={input => this.location = input}
 								/>
 							<label htmlFor="additionalInfo"></label>
-							<input	
+							<input
 								className="additionalInfo"
 								type="text"
 								name="additionalInfo"
