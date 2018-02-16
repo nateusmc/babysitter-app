@@ -16,6 +16,7 @@ const initialState = {
   redirectToSitterPage: false,
   createdBio: [],
   zipcodeSearches: [],
+  parentalInfo: []
 }
 
 const parentsReducer = (state = initialState, action) => {

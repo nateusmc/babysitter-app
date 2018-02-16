@@ -3,14 +3,12 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom'
 import * as actions from '../../actions';
 import BioParentForm from '../BioParent/BioParentForm';
-import {searchSitters} from '../../actions/sitters';
 
 import './DashboardParent.css';
 
 export class DashboardParent extends Component{
 	componentDidMount(){
 			this.props.dispatch(actions.toggleView('parent'));
-			this.props.dispatch(searchSitters(this.props.location));
 	}
 
 	render(){
@@ -47,7 +45,7 @@ export class DashboardParent extends Component{
 
 const mapStateToProps = state => ({
 	userId: state.auth.currentUser.id,
-	createdBios: state.parents.createdBio,
+	createdBios: state.parents.parentalInfo,
 	location: state.auth.currentUser.zipcode,
 	localSitters: state.sitters.zipcodeSearches  
 })
