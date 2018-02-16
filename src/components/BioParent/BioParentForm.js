@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import  {addParentBio} from '../../actions/parents'
+import  {addParentBio} from '../../actions/parents';
+import {searchSitters} from '../../actions/sitters';
 import './BioParentForm';
 
 export class BioParentForm extends Component {
@@ -11,18 +12,19 @@ export class BioParentForm extends Component {
 				startTime: this.startTime.value,
 				endTime: this.endTime.value,
 				numberOfChildren: this.numberOfChildren.value,
-				childAge: this.childAge.value,
+				ageOfChild: this.ageOfChild.value,
 				location: this.location.value,
 				additionalInfo: this.additionalInfo.value,
 				id: this.props.currentUser.id,
 
 			}
 			this.props.dispatch(addParentBio(value));
+			this.props.dispatch(searchSitters(this.props.parentZip));
 			this.dateNeeded.value= '';
 			this.startTime.value= '';
 			this.endTime.value='';
 			this.numberOfChildren.value= '';
-			this.childAge.value= '';
+			this.ageOfChild.value= '';
 			this.location.value= '';
 			this.additionalInfo.value= '';
 
@@ -69,14 +71,14 @@ export class BioParentForm extends Component {
 								placeholder="Number of Children in Household"
 								ref={input => this.numberOfChildren = input}
 								/>
-							<label htmlFor="childAge"></label>
+							<label htmlFor="ageOfChild"></label>
 							<input	
-								className="childAge"
+								className="ageOfChild"
 								type="text"
-								name="childAge"
-								id="childAge"
+								name="ageOfChild"
+								id="ageOfChild"
 								placeholder="How old is your child/ren"
-								ref={input => this.childAge = input}
+								ref={input => this.ageOfChild = input}
 								/>
 							<label htmlFor="location"></label>
 							<input	
@@ -106,7 +108,8 @@ export class BioParentForm extends Component {
 
 
 const mapStateToProps = state => ({
-	currentUser: state.auth.currentUser
+	currentUser: state.auth.currentUser,
+	parentZip: state.auth.currentUser.zipcode
 })
 
 export default connect(mapStateToProps)(BioParentForm)
