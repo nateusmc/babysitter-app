@@ -5,9 +5,9 @@ import * as actions from '../../actions';
 import BioParentForm from '../BioParent/BioParentForm';
 import {searchSitters} from '../../actions/sitters';
 
-import './DashboardParent.css';
+import './DashboardSitter.css';
 
-export class DashboardParent extends Component{
+export class DashboardSitter extends Component{
 	componentDidMount(){
 			this.props.dispatch(actions.toggleView('parent'));
 			this.props.dispatch(searchSitters(this.props.location));
@@ -49,4 +49,4 @@ const mapStateToProps = state => ({
 	location: state.parents.zipcode  
 })
 
-export default connect(mapStateToProps)(DashboardParent);
+export default connect(mapStateToProps)(DashboardSitter);
