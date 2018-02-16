@@ -26,20 +26,12 @@ export class BioSitterForm extends Component {
 			this.additionalInfo.value= '';
 
 	}
-	<li className="sitterFirstName">Name: {item.sitterUserID.firstName}</li>
-	<li className="sitterLocation">Location: {item.location}</li>
-	{/* <Moment className="availability" format='MM/DD/YYYY'><li className="dateAvailable">Date Available: {item.dateAvailable}</li></Moment > */}
-	<li className="sitterRate">Rate: {item.rate}  </li>
-	<li className="sitterHeader"> {item.sitterHeader}</li>	
-	<li className="individualSitter">Bio: {item.bio}</li>
-	<li className="yearsExperience">Years Experience: {item.yearsExperience}</li>
-
 
 	render(){
 			return(
 					<div className="sitterBio">
 						<form className="sitterBioForm" onSubmit={e=> this.handleAdd(e)}>
-							<legend><h3>Please Describe Your Needs</h3></legend>
+							<legend><h3>Please Describe Your </h3></legend>
 							<label htmlFor="dateNeeded"></label>
 							<input  
 								className="createBioInput"
