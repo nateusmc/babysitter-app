@@ -1,0 +1,11 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.login-box {
+  text-align: center;
+  margin: 0 auto;
+  width: 30%;
+}

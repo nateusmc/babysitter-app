@@ -1,0 +1,11 @@
+.sign-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.registration-box {
+  text-align: center;
+  width: 30%;
+  margin: 0 auto;
+}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { toggleView } from '../../actions/views';
+import Footer from './Footer';
+import './RegistrationPage.css';
 
 import RegistrationPageForm from './RegistrationPageForm';
 
@@ -11,7 +13,14 @@ export class RegistrationPage extends Component {
 
   render() {
     return(
-      <RegistrationPageForm />
+      <div>
+        <div>
+          <RegistrationPageForm />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
+      </div>
     )
   }
 }

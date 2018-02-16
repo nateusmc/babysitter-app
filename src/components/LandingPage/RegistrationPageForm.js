@@ -20,17 +20,17 @@ export class RegistrationPageForm extends React.Component {
         .dispatch(registerUser(user))
         // .then(() => this.props.dispatch(login(email, password)));
     }
-  
+
     render() {
         if(this.props.user.role === 'parent'){
           return <Redirect to="/parent/dashboard" />;
-        } 
+        }
         else if(this.props.user.role === 'sitter'){
           return <Redirect to="/sitter/dashboard" />
         }
-  
+
       // let { selectedRole } = this.props
-  
+
       let successMessage;
       if (this.props.submitSucceeded) {
         successMessage = (
@@ -39,26 +39,26 @@ export class RegistrationPageForm extends React.Component {
           </div>
         );
       }
-  
+
       let errorMessage;
       if (this.props.error) {
         errorMessage = (
           <div className="signup signup-error">{this.props.error}</div>
         );
       }
-  
+
       return (
-        <div className="sign-container">   
-  
+        <div className="sign-container">
+
         <form
           className="registration-form"
           onSubmit={this.props.handleSubmit(values =>
               this.onSubmit(values)
           )}>
-  
+
           {successMessage}
           {errorMessage}
-  
+
           <fieldset className="registration-box">
             <legend>Sign Up</legend>
           <div className='fields-container-2'>
@@ -115,22 +115,20 @@ export class RegistrationPageForm extends React.Component {
       );
     }
   }
-  
+
   const mapStateToProps = state => ({
     //   comes in as formReducer from redux-form
     selectedRole: state.form.registration.values.role,
     loggedIn: state.auth.currentUser !== null,
     user: state.auth.currentUser,
   })
-  
+
   RegistrationPageForm = connect(
     mapStateToProps)(RegistrationPageForm);
-  
+
   export default reduxForm({
     form: 'registration',
     initialValues: { role: 'parent' },
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('registration', Object.keys(errors)[0]))
   })(RegistrationPageForm);
-
-
