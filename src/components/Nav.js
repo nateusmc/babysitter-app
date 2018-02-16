@@ -51,7 +51,7 @@ export class Nav extends Component {
       if(this.props.currentView === 'parent'){
         parentTabs = (
           <div className="nav-button-container">
-            <button className="nav-bttn parent-dashboard"><Link to="/parent/dashboard" className="nav-bttn">Dashboard</Link></button>
+            <Link to="/parent/dashboard" className="nav-bttn"><button className="nav-bttn parent-dashboard">Dashboard</button></Link>
             <button className="nav-bttn nav-student-classes"><Link to="/parent/notifications" className="nav-bttn">Notifications</Link></button>
           </div>
         )
