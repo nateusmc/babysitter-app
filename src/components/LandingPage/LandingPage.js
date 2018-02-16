@@ -52,10 +52,8 @@ export class LandingPage extends Component {
             </div>
           </form>
         </div>
-        <div>
-          <SearchResults/>
         </div>
-      </div>
+        <SearchResults/>
         <Footer/>
     </div>
   );

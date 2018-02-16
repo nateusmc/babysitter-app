@@ -11,7 +11,7 @@ export class SearchResults extends Component {
 							<div>Loading....</div>
 					)
 			}
-			
+
 			let sitterList, resultHeader;
 
 			sitterList = this.props.result.map((item, index) => {
@@ -22,7 +22,7 @@ export class SearchResults extends Component {
 									<li className="sitterLocation">Location: {item.location}</li>
 									{/* <Moment className="availability" format='MM/DD/YYYY'><li className="dateAvailable">Date Available: {item.dateAvailable}</li></Moment > */}
 									<li className="sitterRate">Rate: {item.rate}  </li>
-									<li className="sitterHeader"> {item.sitterHeader}</li>	
+									<li className="sitterHeader"> {item.sitterHeader}</li>
 									<li className="individualSitter">Bio: {item.bio}</li>
 									<li className="yearsExperience">Years Experience: {item.yearsExperience}</li>
 								</ul>
@@ -41,7 +41,7 @@ export class SearchResults extends Component {
 							<h3>Sitters Near You</h3>
 					)
 			}
-			
+
 	return(
 			<div className="sitterSearchResultsContainer">
 					<ul className="sitterResultsUl">
