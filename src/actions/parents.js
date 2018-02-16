@@ -1,5 +1,6 @@
 import * as types from './actionType';
 import {API_BASE_URL} from '../config';
+import { normalizeResponseErrors } from './utils';
 
 
 // Sync Actions
@@ -52,25 +53,18 @@ export const searchParentsByZipSuccess = (zipcodes) => ({
 // })
 // Async Actions
 
-export const addParentsInfo = (parents) => dispatch => {
+export const addParentBio = (values) => (dispatch, getState) => {
     dispatch(fetchParentsRequest());
-    return fetch(`${API_BASE_URL}/parents`, {
+    return fetch(`${API_BASE_URL}/parents/bio/create`, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(parents)
+      headers: {
+        'Content-Type': 'application/json', 
+        'Accept': 'application/json' 
+    },
+      body: JSON.stringify(values)
     })
-    .then(res => {
-      if(!res.ok) {
-        return Promise.reject(res.statusText)
-      }
-        return res.json();
-    })
-    .then(
-        parents => {
-            window.location = '/'
-          dispatch(addParentsSuccess(parents))
-        }
-    )
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
     .catch(err =>
       dispatch(fetchParentsError(err)))
   }

@@ -48,7 +48,7 @@ export class DashboardParent extends Component{
 const mapStateToProps = state => ({
 	userId: state.auth.currentUser.id,
 	createdBios: state.parents.createdBio,
-	location: state.parents.zipcode,
+	location: state.auth.currentUser.zipcode,
 	localSitters: state.sitters.zipcodeSearches  
 })
 

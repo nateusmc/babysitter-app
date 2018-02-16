@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-// import  {createParentBio} from '../../actions/parents'
+import  {addParentBio} from '../../actions/parents'
 import './BioParentForm';
 
 export class BioParentForm extends Component {
@@ -9,7 +8,8 @@ export class BioParentForm extends Component {
 			e.preventDefault();
 			const value = {
 				dateNeeded: this.dateNeeded.value,
-				jobDuration: this.jobDuration.value,
+				startTime: this.startTime.value,
+				endTime: this.endTime.value,
 				numberOfChildren: this.numberOfChildren.value,
 				childAge: this.childAge.value,
 				location: this.location.value,
@@ -17,9 +17,10 @@ export class BioParentForm extends Component {
 				id: this.props.currentUser.id,
 
 			}
-			// this.props.dispatch(createParentBio(value));
+			this.props.dispatch(addParentBio(value));
 			this.dateNeeded.value= '';
-			this.jobDuration.value= '';
+			this.startTime.value= '';
+			this.endTime.value='';
 			this.numberOfChildren.value= '';
 			this.childAge.value= '';
 			this.location.value= '';
@@ -41,14 +42,23 @@ export class BioParentForm extends Component {
 								ref={input => this.dateNeeded = input}
 								/>
 
-							<label htmlFor="duration"></label>
+							<label htmlFor="startTime"></label>
 							<input
-								className="jobDuration"
-								type="number"
-								name="jobDuration"
-								id="jobDuration"
-								placeholder="Hours Needed"
-								ref={input => this.jobDuration = input}
+								className="startTime"
+								type="text"
+								name="startTime"
+								id="startTime"
+								placeholder="Start time"
+								ref={input => this.startTime = input}
+								/>
+							<label htmlFor="endTime"></label>
+							<input
+								className="endTime"
+								type="text"
+								name="endTime"
+								id="endTime"
+								placeholder="End Time"
+								ref={input => this.endTime = input}
 								/>
 							<label htmlFor="numberOfChildren"></label>
 							<input
