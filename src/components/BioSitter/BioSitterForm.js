@@ -12,7 +12,6 @@ export class BioSitterForm extends Component {
 				yearsExperience: this.yearsExperience.value,
 				rate: this.rate.value,
 				location: this.location.value,
-				additionalInfo: this.additionalInfo.value,
 				id: this.props.currentUser.id,
 
 			}
@@ -23,18 +22,16 @@ export class BioSitterForm extends Component {
 			this.bio.value='';
 			this.dateNeeded.value= '';
 			this.location.value= '';
-			this.additionalInfo.value= '';
-
 	}
 
 	render(){
 			return(
 					<div className="sitterBio">
 						<form className="sitterBioForm" onSubmit={e=> this.handleAdd(e)}>
-							<legend><h3>Please Describe Your </h3></legend>
-							<label htmlFor="dateNeeded"></label>
+							<legend><h3>Please Describe Yourself </h3></legend>
+							<label htmlFor="sitterBioForm"></label>
 							<input  
-								className="createBioInput"
+								className="dateNeeded"
 								type="date"
 								name="dateNeeded"
 								id="dateNeeded"
@@ -42,32 +39,32 @@ export class BioSitterForm extends Component {
 								ref={input => this.dateNeeded = input}
 								/>
 
-							<label htmlFor="duration"></label>
+							<label htmlFor="rate"></label>
 							<input
-								className="jobDuration"
+								className="sitterRate"
 								type="number"
-								name="jobDuration"
-								id="jobDuration"
-								placeholder="Hours Needed"
-								ref={input => this.jobDuration = input}
+								name="rate"
+								id="rate"
+								placeholder="Hourly Rate"
+								ref={input => this.rate = input}
 								/>
-							<label htmlFor="numberOfChildren"></label>
+							<label htmlFor="yearsExperience"></label>
 							<input
-								className="numberOfChildren"
+								className="yearsExperience"
 								type="number"
-								name="numberOfChildren"
-								id="numberOfChildren"
-								placeholder="Number of Children in Household"
-								ref={input => this.numberOfChildren = input}
+								name="yearsExperience"
+								id="yearsExperience"
+								placeholder="Years of Experience"
+								ref={input => this.yearsExperience = input}
 								/>
-							<label htmlFor="childAge"></label>
+							<label htmlFor="sitterHeader"></label>
 							<input	
-								className="childAge"
+								className="sitterHeader"
 								type="text"
-								name="childAge"
-								id="childAge"
-								placeholder="How old is your child/ren"
-								ref={input => this.childAge = input}
+								name="sitterHeader"
+								id="sitterHeader"
+								placeholder="Header"
+								ref={input => this.sitterHeader = input}
 								/>
 							<label htmlFor="location"></label>
 							<input	
@@ -80,14 +77,14 @@ export class BioSitterForm extends Component {
 								/>
 							<label htmlFor="additionalInfo"></label>
 							<input	
-								className="additionalInfo"
+								className="bio"
 								type="text"
-								name="additionalInfo"
-								id="additionalInfo"
+								name="bio"
+								id="bio"
 								placeholder="Additional information"
-								ref={input => this.additionalInfo = input}
-								/>
-								<button className="parentBioFormButton"type="submit">Submit</button>
+								ref={input => this.bio = input}
+								/>	
+								<button className="sitterBioFormButton"type="submit">Submit</button>
 						</form>
 
 					</div>

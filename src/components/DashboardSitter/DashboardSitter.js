@@ -21,24 +21,27 @@ export class DashboardSitter extends Component{
 				</div>
 			)
 		}
-		let localSitterList;
-				localSitterList = this.props.localSitters.map((item, index) =>
+		let localParentList;
+		localParentList = this.props.localParents.map((item, index) =>
 
 				<div key={index}>
 					<ul>
-						<li className="sitterFirstName">Name: {item.sitterUserID.firstName}</li>
-						<li className="sitterLocation">Location: {item.location}</li>
+						<li className="parentFirstName">Name: {item.parentUserID.firstName}</li>
+						<li className="parentLocation">Location: {item.location}</li>
 						{/* <Moment className="availability" format='MM/DD/YYYY'><li className="dateAvailable">Date Available: {item.dateAvailable}</li></Moment > */}
-						<li className="sitterRate">Rate: {item.rate}  </li>
-						<li className="sitterHeader"> {item.sitterHeader}</li>	
-						<li className="individualSitter">Bio: {item.bio}</li>
-						<li className="yearsExperience">Years Experience: {item.yearsExperience}</li>
+						<li className="ageOfChild">Child Age: {item.ageOfChild}</li>
+						<li className="dateNeeded"> {item.dateNeeded}</li>	
+						<li className="startTime">Start Time: {item.startTime}</li>
+						<li className="endTime">End Time: {item.endTime}</li>
+						<li className="additionalInfo">Additional Info: {item.additionalInfo}</li>
 					</ul>
-						<button className="contactSitterButton">Sign Up to Contact Sitter</button>
+						<button className="contactParentButton">Contact Parent</button>
 				</div>
 				)
 			return(
-					<div></div>
+					<div>
+						{localParentList}
+					</div>
 			)
 	}
 }
@@ -46,7 +49,8 @@ export class DashboardSitter extends Component{
 const mapStateToProps = state => ({
 	userId: state.auth.currentUser.id,
 	createdBios: state.sitters.createdBio,
-	location: state.sitters.zipcode  
+	location: state.auth.currentUser.zipcode,
+	localParents: state.parents.zipcodeSearches,
 })
 
 export default connect(mapStateToProps)(DashboardSitter);

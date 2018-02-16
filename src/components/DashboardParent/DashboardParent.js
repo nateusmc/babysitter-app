@@ -38,7 +38,9 @@ export class DashboardParent extends Component{
 				</div>
 				)
 			return(
-					<div></div>
+					<div>
+						{localSitterList}
+					</div>
 			)
 	}
 }
@@ -46,7 +48,8 @@ export class DashboardParent extends Component{
 const mapStateToProps = state => ({
 	userId: state.auth.currentUser.id,
 	createdBios: state.parents.createdBio,
-	location: state.parents.zipcode  
+	location: state.parents.zipcode,
+	localSitters: state.sitters.zipcodeSearches  
 })
 
 export default connect(mapStateToProps)(DashboardParent);
