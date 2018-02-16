@@ -41,16 +41,6 @@ export const searchParentsByZipSuccess = (zipcodes) => ({
     zipcodes,
 })
 
-// not sure if I will need.
-
-// export const fetchBioRequest = () => ({
-//     type: types.FETCH_BIO_REQUEST,
-// })
-
-// export const fetchBioSuccess = (bios) => ({
-//     type: types.FETCH_BIO_SUCCESS,
-//     bios
-// })
 // Async Actions
 
 export const addParentBio = (values) => (dispatch, getState) => {
@@ -65,6 +55,7 @@ export const addParentBio = (values) => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
+    .then(parentalInfo => dispatch(addParentsInfoSuccess(parentalInfo)))
     .catch(err =>
       dispatch(fetchParentsError(err)))
   }
