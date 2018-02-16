@@ -52,11 +52,8 @@ export const login = (email, password) => dispatch => {
         })
             // Reject any requests which don't return a 200 status, creating
             // errors which follow a consistent format
-            .then(res => {
-                console.log('res', res)
-                normalizeResponseErrors(res)})
-            .then(res => {
-                res.json()})
+            .then(res => normalizeResponseErrors(res))
+            .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
             .catch(err => {
                 const {code} = err;

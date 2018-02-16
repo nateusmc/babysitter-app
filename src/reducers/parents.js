@@ -15,10 +15,17 @@ const initialState = {
   visible: false,
   redirectToSitterPage: false,
   createdBio: [],
+  zipcodeSearches: [],
 }
 
 const parentsReducer = (state = initialState, action) => {
   switch (action.type){
+    case types.SEARCH_PARENTS_BY_ZIP_SUCCESS:
+      return Object.assign({}, state, {
+        loading: false,
+        error: false,
+        zipcodeSearches: action.zipcodes,
+      })
     case types.ADD_PARENTS_INFO_REQUEST:
       return Object.assign({}, state, {
        loading: true,
