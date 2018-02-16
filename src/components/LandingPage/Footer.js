@@ -22,7 +22,7 @@ export default function Footer(){
         <div>
           <p className="footer-category">About Us</p>
           <ul>
-            <li><a className='link-to-portfolio footer-links' href='www.adambradbury.tech' target='_blank' rel="noopener noreferrer">Adam Bradbury</a></li>
+            <li><a className='link-to-portfolio footer-links' href='http://www.adambradbury.tech/' target='_blank' rel="noopener noreferrer">Adam Bradbury</a></li>
             <li><a className='link-to-portfolio footer-links' href='http://www.nathanpaulgarrett.com/' target='_blank' rel="noopener noreferrer">Nathan Garrett</a></li>
           </ul>
       </div>
