@@ -6,11 +6,11 @@ import Moment from 'react-moment';
 export class SearchResults extends Component {
 
 	render() {
-			// if (this.props.loading){
-			// 		return (
-			// 				<div>Loading....</div>
-			// 		)
-			// }
+			if (this.props.loading){
+					return (
+							<div>Loading....</div>
+					)
+			}
 			
 			let sitterList, resultHeader;
 

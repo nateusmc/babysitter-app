@@ -70,11 +70,11 @@ export class BioParentForm extends Component {
 								/>
 							<label htmlFor="location"></label>
 							<input	
-								className="location"
-								type="number"
-								name="location"
-								id="location"
-								placeholder="Location"
+								className="zipcode"
+								type="text"
+								name="zipcode"
+								id="zipcode"
+								placeholder="Zipcode"
 								ref={input => this.location = input}
 								/>
 							<label htmlFor="additionalInfo"></label>
