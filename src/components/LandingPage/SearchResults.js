@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
-
+import './SearchResults.css';
 
 export class SearchResults extends Component {
 
@@ -38,19 +38,17 @@ export class SearchResults extends Component {
 			}
 			else if (this.props.result.length > 0){
 					resultHeader = (
-							<h3>Sitters Near You</h3>
+							<h3>Sitters Near You:</h3>
 					)
 			}
 
 	return(
-			<div className="sitterSearchResultsContainer">
-					<ul className="sitterResultsUl">
-							<li className="sitterResultLi">
-									{resultHeader}
-									{sitterList}
-							</li>
+					<ul className="sitterResultHeader">
+            {resultHeader}
+				        <li className="sitterResultList">
+					             {sitterList}
+				         </li>
 					</ul>
-			</div>
 	)
 	}
 }
