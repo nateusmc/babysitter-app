@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom'
 import * as actions from '../../actions';
+import {searchSitters} from '../../actions/sitters';
 import BioParentForm from '../BioParent/BioParentForm';
 
 import './DashboardParent.css';
@@ -9,6 +10,8 @@ import './DashboardParent.css';
 export class DashboardParent extends Component{
 	componentDidMount(){
 			this.props.dispatch(actions.toggleView('parent'));
+			this.props.dispatch(actions.fetchEnrolledParentBio(this.props.userId))
+			this.props.dispatch(searchSitters(this.props.location));
 	}
 
 	render(){

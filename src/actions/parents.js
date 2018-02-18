@@ -1,9 +1,20 @@
 import * as types from './actionType';
 import {API_BASE_URL} from '../config';
 import { normalizeResponseErrors } from './utils';
+import { FETCH_BIO_SUCCESS, FETCH_BIO_ERROR } from './actionType';
 
 
 // Sync Actions
+export const fetchBioSuccess = bios => ({
+    type: FETCH_BIO_SUCCESS,
+    bios,
+})
+
+export const fetchBioError = err => ({
+    type: FETCH_BIO_ERROR,
+    err,
+})
+
 export const fetchParentsSuccess = parents => ({
     type: types.FETCH_PARENTS_SUCCESS,
     parents
@@ -42,6 +53,17 @@ export const searchParentsByZipSuccess = (zipcodes) => ({
 })
 
 // Async Actions
+
+export const fetchEnrolledParentBio = id => (dispatch) => {
+    dispatch(fetchParentsRequest());
+    return fetch(`${API_BASE_URL}/parents/bio/${id}`)
+    .then(res => res.json())
+    .then(bio => dispatch(fetchBioSuccess(bio)))
+    .catch((err) => {
+        dispatch(fetchBioError(err));
+    })
+}
+
 
 export const addParentBio = (values) => (dispatch, getState) => {
     dispatch(fetchParentsRequest());

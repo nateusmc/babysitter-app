@@ -21,6 +21,12 @@ const initialState = {
 
 const parentsReducer = (state = initialState, action) => {
   switch (action.type){
+    case types.FETCH_BIO_SUCCESS:
+      return Object.assign({}, state, {
+        loading: false,
+        error: false,
+        parentalInfo: action.bios
+      })
     case types.SEARCH_PARENTS_BY_ZIP_SUCCESS:
       return Object.assign({}, state, {
         loading: false,

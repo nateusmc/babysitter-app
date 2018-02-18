@@ -21,7 +21,7 @@ export class LoginPageForm extends React.Component {
         if(this.props.user.role === 'parent'){
         return <Redirect to="/parent/dashboard" />;
         } 
-        else if(this.props.user.role === 'sitter'){
+        else if(this.props.user.role === 'Sitter'){
           return <Redirect to="/sitter/dashboard" />
         }
       }
