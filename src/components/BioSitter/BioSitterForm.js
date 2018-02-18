@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import {addSitterBio} from '../../actions/sitters';
+import {searchParents} from '../../actions/parents'
 import './BioSitterForm.css';
 
 export class BioSitterForm extends Component {
@@ -12,15 +13,19 @@ export class BioSitterForm extends Component {
 				yearsExperience: this.yearsExperience.value,
 				rate: this.rate.value,
 				location: this.location.value,
+				dateAvailable: this.dateAvailable.value,
+				hoursAvailable: this.hoursAvailable.value,
 				id: this.props.currentUser.id,
 
 			}
-			// this.props.dispatch(createSitterBio(value));
+			this.props.dispatch(addSitterBio(value));
+			this.props.dispatch(searchParents(this.props.sitterZip))
 			this.rate.value='';
 			this.yearsExperience.value='';
 			this.sitterHeader.value='';
 			this.bio.value='';
-			this.dateNeeded.value= '';
+			this.dateAvailable.value= '';
+			this.hoursAvailable.value='';
 			this.location.value= '';
 	}
 
@@ -29,14 +34,14 @@ export class BioSitterForm extends Component {
 					<div className="sitterBio">
 						<form className="sitterBioForm" onSubmit={e=> this.handleAdd(e)}>
 							<legend><h3>Please Describe Yourself </h3></legend>
-							<label htmlFor="sitterBioForm"></label>
+							<label htmlFor="dateAvailable"></label>
 							<input
-								className="dateNeeded"
+								className="dateAvailable"
 								type="date"
-								name="dateNeeded"
-								id="dateNeeded"
+								name="dateAvailable"
+								id="dateAvailable"
 								placeholder="Date Needed"
-								ref={input => this.dateNeeded = input}
+								ref={input => this.dateAvailable = input}
 								/>
 
 							<label htmlFor="rate"></label>
@@ -57,6 +62,14 @@ export class BioSitterForm extends Component {
 								placeholder="Years of Experience"
 								ref={input => this.yearsExperience = input}
 								/>
+							<input
+								className="hoursAvailable"
+								type="number"
+								name="hoursAvailable"
+								id="hoursAvailable"
+								placeholder="Hours Available"
+								ref={input => this.hoursAvailable = input}
+								/>
 							<label htmlFor="sitterHeader"></label>
 							<input
 								className="sitterHeader"
@@ -75,7 +88,7 @@ export class BioSitterForm extends Component {
 								placeholder="Zipcode"
 								ref={input => this.location = input}
 								/>
-							<label htmlFor="additionalInfo"></label>
+							<label htmlFor="bio"></label>
 							<input
 								className="bio"
 								type="text"
@@ -94,7 +107,8 @@ export class BioSitterForm extends Component {
 
 
 const mapStateToProps = state => ({
-	currentUser: state.auth.currentUser
+	currentUser: state.auth.currentUser,
+	sitterZip: state.auth.currentUser.zipcode
 })
 
 export default connect(mapStateToProps)(BioSitterForm)

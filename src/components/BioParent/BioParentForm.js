@@ -6,6 +6,7 @@ import './BioParentForm.css';
 
 export class BioParentForm extends Component {
 	handleAdd = (e) => {
+		console.log('e', e)
 			e.preventDefault();
 			const value = {
 				dateNeeded: this.dateNeeded.value,
