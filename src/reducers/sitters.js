@@ -12,6 +12,12 @@ const initialState = {
 
 const sittersReducer = (state = initialState, action) => {
 	switch (action.type){
+			case types.FETCH_BIO_SUCCESS:
+				return Object.assign({}, state, {
+					loading: false,
+					error: false,
+					sitterBio: action.bios
+				});
 			case types.ADD_SITTER_BIO_SUCCESS:
 				return Object.assign({}, state, {
 					loading: false, 

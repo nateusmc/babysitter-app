@@ -4,6 +4,10 @@ import { normalizeResponseErrors } from './utils';
 
 // Sync Actions
 
+export const fetchBioSuccess = bios => ({
+    type: types.FETCH_BIO_SUCCESS,
+    bios,
+})
 
 export const fetchBioRequest = () => ({
     type: types.FETCH_BIO_REQUEST,
@@ -48,6 +52,17 @@ export const toggleInitialSearch = (boolean) => ({
 })
 
 // Async Actions
+
+// Fetches all bios created by logged in sitter
+export const fetchEnrolledSitterBio = id => (dispatch) => {
+    dispatch(fetchSittersRequest());
+    return fetch(`${API_BASE_URL}/sitters/bio/${id}`)
+    .then(res => res.json())
+    .then(bio => dispatch(fetchBioSuccess(bio)))
+    .catch((err) => {
+        dispatch(fetchBioError(err));
+    })
+}
 
 // Search sitters by zipcode
 export const searchSitters = zipcode => (dispatch) => {

@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 import * as actions from '../../actions';
 import BioSitterForm from '../BioSitter/BioSitterForm';
 import {searchParents} from '../../actions/parents';
+import {fetchEnrolledSitterBio} from '../../actions/sitters'
 
 import './DashboardSitter.css';
 
 export class DashboardSitter extends Component{
 	componentDidMount(){
 			this.props.dispatch(actions.toggleView('sitter'));
+			this.props.dispatch(fetchEnrolledSitterBio(this.props.userId))
+			this.props.dispatch(searchParents(this.props.location))
 	}
 
 	render(){

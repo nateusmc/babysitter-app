@@ -1,17 +1,16 @@
 import * as types from './actionType';
 import {API_BASE_URL} from '../config';
 import { normalizeResponseErrors } from './utils';
-import { FETCH_BIO_SUCCESS, FETCH_BIO_ERROR } from './actionType';
 
 
 // Sync Actions
 export const fetchBioSuccess = bios => ({
-    type: FETCH_BIO_SUCCESS,
+    type: types.FETCH_BIO_SUCCESS,
     bios,
 })
 
 export const fetchBioError = err => ({
-    type: FETCH_BIO_ERROR,
+    type: types.FETCH_BIO_ERROR,
     err,
 })
 
