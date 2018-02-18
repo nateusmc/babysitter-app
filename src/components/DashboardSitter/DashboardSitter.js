@@ -10,7 +10,6 @@ import './DashboardSitter.css';
 export class DashboardSitter extends Component{
 	componentDidMount(){
 			this.props.dispatch(actions.toggleView('sitter'));
-			this.props.dispatch(searchParents(this.props.location));
 	}
 
 	render(){
@@ -23,7 +22,6 @@ export class DashboardSitter extends Component{
 		}
 		let localParentList;
 		localParentList = this.props.localParents.map((item, index) =>
-
 				<div key={index}>
 					<ul>
 						<li className="parentFirstName">Name: {item.parentUserID.firstName}</li>
@@ -48,7 +46,7 @@ export class DashboardSitter extends Component{
 
 const mapStateToProps = state => ({
 	userId: state.auth.currentUser.id,
-	createdBios: state.sitters.createdBio,
+	createdBios: state.sitters.sitterBio,
 	location: state.auth.currentUser.zipcode,
 	localParents: state.parents.zipcodeSearches,
 })
