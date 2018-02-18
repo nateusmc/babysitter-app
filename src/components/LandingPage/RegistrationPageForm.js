@@ -13,7 +13,7 @@ import './RegistrationPageForm.css'
 
 export class RegistrationPageForm extends React.Component {
     onSubmit(values) {
-      console.log('values', values)
+      // console.log('values', values)
       const { email, password, firstName, lastName, role, zipcode } = values;
       const user = { email, password, firstName, lastName, role, zipcode };
       return this.props
@@ -22,10 +22,12 @@ export class RegistrationPageForm extends React.Component {
     }
 
     render() {
+      // console.log(this.props.user, 'this.props.user')
         if(this.props.user.role === 'parent'){
           return <Redirect to="/parent/dashboard" />;
         }
-        else if(this.props.user.role === 'sitter'){
+        else if(this.props.user.role === 'Sitter'){
+
           return <Redirect to="/sitter/dashboard" />
         }
 

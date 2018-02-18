@@ -7,10 +7,27 @@ const initialState = {
 	loading: false,
 	error: false,
 	createdBio: [],
+	sitterBio: [],
 }
 
 const sittersReducer = (state = initialState, action) => {
 	switch (action.type){
+			case types.ADD_SITTER_BIO_SUCCESS:
+				return Object.assign({}, state, {
+					loading: false, 
+					error: false,
+					sitterBio: action.sitterBio
+				});
+			case types.FETCH_BIO_REQUEST:
+				return Object.assign({}, state, {
+					loading: true,
+					error: false,
+				});
+			case types.FETCH_BIO_ERROR:
+				return Object.assign({}, state, {
+					loading: false,
+					error: action.err
+				});
 			case types.FETCH_SITTERS_REQUEST:
 				return Object.assign({}, state, {
 					loading: true,
