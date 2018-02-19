@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { toggleView } from '../../actions/views';
-import Footer from './Footer';
-import './LoginPage.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { toggleView } from "../../actions/views";
+import Footer from "./Footer";
+import "./LoginPage.css";
 
-import LoginPageForm from './LoginPageForm';
+import LoginPageForm from "./LoginPageForm";
 
 export class LoginPage extends Component {
   componentDidMount() {
-    this.props.dispatch(toggleView('login'));
+    this.props.dispatch(toggleView("login"));
   }
 
   render() {
-    return(
+    return (
       <div>
         <div>
           <LoginPageForm />
         </div>
-        <div className='footer'>
+        <div className="footer">
           <Footer />
         </div>
-    </div>
-    )
+      </div>
+    );
   }
 }
 

@@ -7,12 +7,11 @@ import viewReducer from './views';
 import sittersReducer from './sitters';
 
 const rootReducer = combineReducers({
-  parents: parentsReducer,
-  auth: authReducer,
-  view: viewReducer,
-  form: formReducer,
-  sitters: sittersReducer,
-  
-})
+	parents: parentsReducer,
+	auth: authReducer,
+	view: viewReducer,
+	form: formReducer,
+	sitters: sittersReducer,
+});
 
 export default rootReducer;
