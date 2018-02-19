@@ -2,14 +2,6 @@ import * as types from '../actions/actionType';
 
 const initialState = {
 	parents: [],
-	firstName: null,
-	ageOfChild: null,
-	zipcode: null,
-	dateNeeded: null,
-	startTime: null,
-	endTime: null,
-	email: null,
-	additionalInfo: null,
 	loading: false,
 	error: null,
 	visible: false,
