@@ -36,6 +36,13 @@ export class LandingPage extends Component {
 		return (
 			<div className="landingPageContainer">
 				<div className="Site-Content">
+					<div className="imgWrapper">
+						<img
+							className="babysitterImg"
+							src={'https://i.imgur.com/5co1gtF.jpg'}
+							alt="babysitter-playing-with-child"
+						/>
+					</div>
 					<div className="descriptionWrapper">
 						<div className="description">
 							Sitter Finder's mission is to make child care more affordable and accessable to parents. The
@@ -43,27 +50,27 @@ export class LandingPage extends Component {
 							occasion or if needed on a regular schedule. The technology will also allow parents to
 							search for certified sitters based on location.
 						</div>
-					</div>
-					<div className="searchForm">
-						<form className="zipCodeForm" onSubmit={e => this.handleSearch(e)}>
-							<legend className="legend">Search for a Sitter Near You</legend>
-							<div>
-								<label htmlFor="zipInput" className="label">
-									I'm looking for a sitter in
-								</label>
-								<input
-									className="searchSitterByZipInput"
-									id="zipInput"
-									name="zipInput"
-									type="text"
-									placeholder="Enter Zip Code"
-									ref={input => (this.input = input)}
-								/>
-								<button className="searchButton" type="submit">
-									Search
-								</button>
-							</div>
-						</form>
+						<div className="searchForm">
+							<form className="zipCodeForm" onSubmit={e => this.handleSearch(e)}>
+								<legend className="legend">Search for a Sitter Near You</legend>
+								<div>
+									<label htmlFor="zipInput" className="label">
+										I'm looking for a sitter in
+									</label>
+									<input
+										className="searchSitterByZipInput"
+										id="zipInput"
+										name="zipInput"
+										type="text"
+										placeholder="Enter Zip Code"
+										ref={input => (this.input = input)}
+									/>
+									<button className="searchButton" type="submit">
+										Search
+									</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 				<SearchResults />

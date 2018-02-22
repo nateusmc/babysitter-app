@@ -1,39 +1,39 @@
 html {
-  font: 120%/1.5 sans-serif;
+	font-family: 120%/1.5 sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  /* font-family: sans-serif; */
-
+	margin: 0;
+	padding: 0;
+	/* font-family: sans-serif; */
+	background-color: whitesmoke;
 }
 
 ul {
-  list-style: none;
-  padding-left: 0
+	list-style: none;
+	padding-left: 0;
 }
 
 .routerWrapper {
-  width: 55%;
-  max-width: 1000px;
-  margin: 5rem auto;
+	width: 55%;
+	max-width: 1000px;
+	margin: 5rem auto;
 }
 
 a {
-  color: black !important;
+	color: black !important;
 }
 
 .button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+	background-color: #4caf50; /* Green */
+	border: none;
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
 }
 
 .button:hover {
-    background-color: rgb(65, 100, 65)
+	background-color: rgb(65, 100, 65);
 }

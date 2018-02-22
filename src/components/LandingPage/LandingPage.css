@@ -1,52 +1,65 @@
 .landingPageContainer {
-    display: flex;
-    flex-direction: column;
-    min-height: 85vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 85vh;
 }
 
 .Site-Content {
-    flex: 1 0 auto;
-    padding: var(--space) var(--space) 0;
-    width: 100%;
+	display: flex;
 }
 
+.imgWrapper {
+	width: 50%;
+	height: 400px;
+	margin-left: 5%;
+	margin-top: 5%;
+}
+
+.babysitterImg {
+	width: 700px;
+	height: 275px;
+}
 .searchForm {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .legend {
-  margin-top: 20%;
-  margin-left: 15%;
-  font-size: 24px;
+	margin-top: 10%;
+	margin-left: 15%;
+	font-size: 24px;
+	margin-bottom: 15px;
 }
 
 .descriptionWrapper {
-  display: flex;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 6%;
-  text-align: center;
+	display: flex;
+	max-width: 50%;
+	flex-direction: column;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 6%;
+	text-align: center;
 }
 
 .description {
-  font-size: 28px;
+	font-size: 28px;
 }
 
 .label {
-  font-size: 24px;
-  padding-right: 10px;
-  margin-top: 30px;
+	font-size: 24px;
+	padding-right: 10px;
+	margin-top: 30px;
 }
 
 .searchSitterByZipInput {
-  height: 20px;
+	height: 20px;
 }
 
 .searchButton {
-  height: 24px;
+	height: 24px;
 }
 
 .zipCodeForm {
-  display: block;
+	display: block;
+	text-align: center;
 }

@@ -98,9 +98,8 @@ export class Nav extends Component {
 			<div className="nav-bar">
 				<Link to="/" className="logo-container">
 					<img className="logo" src="https://imgur.com/D1o9XQM.png" alt="logo" />
-					<span className="sitter-finder">Sitter Finder</span>
 				</Link>
-
+				<span className="sitter-finder">Sitter Finder</span>
 				{landingPageTabs}
 				{parentTabs}
 				{sitterTabs}
