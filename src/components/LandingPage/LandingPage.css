@@ -9,7 +9,7 @@
 }
 
 .imgWrapper {
-	width: 50%;
+	max-width: 50%;
 	height: 400px;
 	margin-left: 5%;
 	margin-top: 5%;
@@ -62,4 +62,22 @@
 .zipCodeForm {
 	display: block;
 	text-align: center;
+}
+
+@media only screen and (min-width: 1025px) {
+	.babysitterImg {
+		width: 500px;
+		height: 250px;
+		margin-top: 20px;
+	}
+	.description {
+		font-size: 22px;
+		text-align: left;
+	}
+	.legend {
+		margin-left: 0px;
+	}
+	.searchSitterByZipInput {
+		margin-top: 10px;
+	}
 }
