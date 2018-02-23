@@ -64,6 +64,31 @@
 	text-align: center;
 }
 
+@media only screen and (min-width: 1600px) {
+	.babysitterImg {
+		width: 600px !important;
+		height: 300px;
+		margin-top: 20px;
+	}
+	.descriptionWrapper {
+		max-width: 50%;
+		margin-right: 0%;
+	}
+	.description {
+		font-size: 30px;
+		text-align: center;
+	}
+	.legend {
+		margin-left: 0px;
+	}
+	.searchSitterByZipInput {
+		margin-top: 10px;
+	}
+	.imgWrapper {
+		width: 600px;
+	}
+}
+
 @media only screen and (min-width: 1025px) {
 	.babysitterImg {
 		width: 500px;
